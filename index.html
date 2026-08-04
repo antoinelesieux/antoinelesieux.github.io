@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antoine Lesieux — Creative Designer | Emailing · Print · Digital · IA</title>
+<meta name="description" content="Portfolio d'Antoine Lesieux, Creative Designer B2B — emailing, print, digital et IA générative. 18 ans d'expérience chez Prisma Media.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --noir-carbone:#121212;
+    --noir-carbone-clair:#1a1a1a;
+    --noir-carbone-plus-clair:#232323;
+    --gris-brume:#e0e0e0;
+    --gris-brume-mute:#9a9a9a;
+    --menthe:#00f5d4;
+    --orange:#ff7a00;
+    --hairline: rgba(224,224,224,0.14);
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-body: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--noir-carbone);
+    color:var(--gris-brume);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img{ max-width:100%; display:block; }
+
+  a{ color:inherit; }
+
+  /* Skip link */
+  .skip-link{
+    position:absolute;
+    left:-999px;
+    top:0;
+    background:var(--menthe);
+    color:var(--noir-carbone);
+    padding:12px 20px;
+    font-weight:700;
+    z-index:100;
+    border-radius:0 0 8px 0;
+  }
+  .skip-link:focus{ left:0; }
+
+  :focus-visible{
+    outline:3px solid var(--menthe);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .wrap{
+    max-width:1160px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ============ MASTHEAD / NAV ============ */
+  .masthead{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(18,18,18,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .masthead .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:16px;
+    padding-bottom:16px;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .masthead-title{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.1rem;
+    letter-spacing:0.02em;
+    text-decoration:none;
+  }
+  .masthead-title span{ color:var(--menthe); }
+  nav.primary-nav ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+    margin:0;
+    padding:0;
+    font-size:0.85rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  nav.primary-nav a{
+    text-decoration:none;
+    color:var(--gris-brume-mute);
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+  }
+  nav.primary-nav a:hover, nav.primary-nav a:focus-visible{
+    color:var(--gris-brume);
+    border-bottom-color:var(--menthe);
+  }
+
+  /* ============ HERO — "COUVERTURE" ============ */
+  .cover{
+    position:relative;
+    border-bottom:1px solid var(--hairline);
+    overflow:hidden;
+  }
+  .cover .wrap{
+    padding-top:56px;
+    padding-bottom:56px;
+    display:grid;
+    grid-template-columns:1fr 220px;
+    gap:40px;
+  }
+  .cover-portrait{
+    width:152px;
+    height:152px;
+    border-radius:50%;
+    overflow:hidden;
+    margin-bottom:20px;
+    border:2px solid var(--menthe);
+    box-shadow:0 6px 18px rgba(0,0,0,0.35);
+  }
+  .cover-portrait img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .cover-kicker-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gris-brume-mute);
+    margin-bottom:28px;
+  }
+  .cover-kicker-row .issue-number{
+    color:var(--menthe);
+    font-weight:700;
+  }
+  .cover-main{ grid-column:1 / 2; }
+  .cover h1{
+    font-family:var(--font-display);
+    font-size:clamp(2.2rem, 5vw, 3.6rem);
+    line-height:1.08;
+    font-weight:800;
+    margin:0 0 32px;
+    max-width:16ch;
+  }
+  .cover-standfirst{
+    font-size:1.1rem;
+    color:var(--gris-brume);
+    max-width:52ch;
+    margin:0 0 32px;
+  }
+  .cover-identity{
+    font-size:0.95rem;
+    color:var(--gris-brume-mute);
+    margin:0 0 32px;
+  }
+  .cover-identity strong{ color:var(--gris-brume); }
+
+  .cta-row{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:13px 24px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:0.95rem;
+    text-decoration:none;
+    border:1px solid transparent;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary{
+    background:var(--menthe);
+    color:var(--noir-carbone);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); }
+  .btn-secondary{
+    background:transparent;
+    color:var(--gris-brume);
+    border-color:var(--gris-brume-mute);
+  }
+  .btn-secondary:hover{
+    border-color:var(--menthe);
+    color:var(--menthe);
+    transform:translateY(-2px);
+  }
+
+  /* Cover lines — bandeau latéral façon couverture magazine */
+  .cover-lines{
+    grid-column:2 / 3;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    gap:18px;
+    border-left:1px solid var(--hairline);
+    padding-left:28px;
+  }
+  .cover-lines-list{ margin:0; padding:0; display:flex; flex-direction:column; gap:18px; }
+  .cover-lines .eyebrow{
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gris-brume-mute);
+    margin-bottom:6px;
+  }
+  .cover-line{
+    padding-bottom:14px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .cover-line:last-child{ border-bottom:none; }
+  .cover-line dt{
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--menthe);
+    margin-bottom:6px;
+  }
+  .cover-line dd{
+    font-family:var(--font-body);
+    font-size:1rem;
+    line-height:1.5;
+    color:var(--gris-brume);
+    margin:0;
+  }
+
+  /* Code-barres décoratif */
+  .barcode{
+    display:flex;
+    align-items:flex-end;
+    gap:2px;
+    height:30px;
+    margin-top:24px;
+    opacity:0.55;
+  }
+  .barcode span{ display:block; background:var(--gris-brume-mute); width:2px; }
+  .barcode span:nth-child(3n){ height:100%; }
+  .barcode span:nth-child(3n+1){ height:70%; }
+  .barcode span:nth-child(3n+2){ height:45%; }
+
+  /* ============ SECTION GENERIC ============ */
+  section{ padding:80px 0; border-bottom:1px solid var(--hairline); }
+  section:last-of-type{ border-bottom:none; }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:40px;
+  }
+  .section-head .num{
+    font-family:var(--font-display);
+    font-size:0.85rem;
+    color:var(--menthe);
+    letter-spacing:0.1em;
+  }
+  .section-head h2{
+    font-family:var(--font-display);
+    font-size:clamp(1.6rem, 3vw, 2.2rem);
+    margin:0;
+    font-weight:700;
+  }
+
+  /* ============ INTRO / À PROPOS ============ */
+  .intro-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .intro-grid p{ margin:0 0 18px; color:var(--gris-brume); }
+  .intro-grid p:last-child{ margin-bottom:0; }
+
+  .expertise-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .expertise-list li{
+    padding:18px 0;
+    border-bottom:1px solid var(--hairline);
+    display:grid;
+    grid-template-columns:28px 1fr;
+    gap:14px;
+  }
+  .expertise-list li:first-child{ padding-top:0; }
+  .expertise-list li:last-child{ border-bottom:none; }
+  .expertise-list .tag{
+    color:var(--menthe);
+    font-family:var(--font-display);
+    font-weight:700;
+  }
+  .expertise-list h3{
+    margin:0 0 4px;
+    font-size:1rem;
+    font-weight:700;
+    color:var(--gris-brume);
+  }
+  .expertise-list p{
+    margin:0;
+    font-size:0.92rem;
+    color:var(--gris-brume-mute);
+  }
+
+  .availability-note{
+    margin-top:36px;
+    padding:20px 24px;
+    background:var(--noir-carbone-clair);
+    border-left:3px solid var(--orange);
+    border-radius:0 8px 8px 0;
+    font-size:0.95rem;
+  }
+
+  /* ============ SOMMAIRE ============ */
+  .sommaire-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    counter-reset:sommaire;
+  }
+  .sommaire-list li{
+    counter-increment:sommaire;
+    border-bottom:1px solid var(--hairline);
+  }
+  .sommaire-list li:first-child{ border-top:1px solid var(--hairline); }
+  .sommaire-list a{
+    display:grid;
+    grid-template-columns:64px 1fr auto;
+    align-items:center;
+    gap:24px;
+    padding:26px 4px;
+    text-decoration:none;
+    color:var(--gris-brume);
+  }
+  .sommaire-list a::before{
+    content: counter(sommaire, decimal-leading-zero);
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    color:var(--menthe);
+  }
+  .sommaire-list .sommaire-text h3{
+    margin:0 0 6px;
+    font-family:var(--font-display);
+    font-size:1.3rem;
+    font-weight:700;
+  }
+  .sommaire-list .sommaire-text p{
+    margin:0;
+    font-size:0.92rem;
+    color:var(--gris-brume-mute);
+  }
+  .sommaire-list .sommaire-arrow{
+    font-size:1.4rem;
+    color:var(--gris-brume-mute);
+    transition:transform 0.15s ease, color 0.15s ease;
+  }
+  .sommaire-list a:hover .sommaire-arrow,
+  .sommaire-list a:focus-visible .sommaire-arrow{
+    color:var(--menthe);
+    transform:translateX(6px);
+  }
+
+  /* ============ RUBRIQUES / SPREADS ============ */
+  .spread-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:36px;
+    flex-wrap:wrap;
+  }
+  .spread-head .spread-kicker{
+    font-family:var(--font-display);
+    font-size:1.6rem;
+    color:var(--menthe);
+    margin:0 0 10px;
+  }
+  .spread-head h2{
+    font-family:var(--font-display);
+    font-size:clamp(1.5rem, 3vw, 2rem);
+    margin:0;
+  }
+  .spread-head .page-ref{
+    font-size:0.92rem;
+    color:var(--gris-brume-mute);
+  }
+  .spread-desc{
+    max-width:64ch;
+    color:var(--gris-brume-mute);
+    margin:0 0 40px;
+  }
+
+  .creation-subgroup + .creation-subgroup{
+    margin-top:56px;
+    padding-top:40px;
+    border-top:1px solid var(--hairline);
+  }
+  .creation-subgroup-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:24px;
+  }
+  .creation-subgroup-head .subnum{
+    font-family:var(--font-display);
+    font-style:italic;
+    color:var(--gris-brume-mute);
+    font-size:0.95rem;
+  }
+  .creation-subgroup-head h3{
+    margin:0;
+    font-size:1.05rem;
+    font-weight:700;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    color:var(--gris-brume);
+  }
+  .creation-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+    align-items:start;
+  }
+  .creation-card{
+    border:1px dashed rgba(224,224,224,0.3);
+    border-radius:8px;
+    background:var(--noir-carbone-clair);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .creation-card .thumb{
+    aspect-ratio:4/3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--noir-carbone-plus-clair);
+    color:var(--gris-brume-mute);
+    text-align:center;
+    padding:20px;
+    font-size:0.85rem;
+  }
+  .creation-card .thumb .plus{
+    display:block;
+    font-size:1.8rem;
+    color:var(--menthe);
+    margin-bottom:8px;
+    font-family:var(--font-display);
+  }
+  .creation-card figcaption{
+    padding:14px 16px;
+    font-size:0.85rem;
+    color:var(--gris-brume-mute);
+    border-top:1px solid var(--hairline);
+  }
+  /* Quand un vrai visuel est ajouté (classe .filled), le style "nu" décrit dans le brief s'applique */
+  .creation-card.filled{
+    border:1px solid rgba(255,255,255,0.16);
+  }
+  .creation-card.filled .thumb{
+    aspect-ratio:auto;
+    padding:0;
+    background:none;
+    position:relative;
+    display:block;
+    width:100%;
+    border:none;
+    margin:0;
+    cursor:pointer;
+    font:inherit;
+  }
+  .creation-card.filled img{
+    width:100%;
+    height:auto;
+    display:block;
+    box-shadow:0 6px 18px rgba(0,0,0,0.35);
+  }
+  .creation-card.filled .thumb::after{
+    content:"⤢ Agrandir";
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    padding:6px 12px;
+    background:rgba(18,18,18,0.82);
+    color:var(--gris-brume);
+    font-size:0.75rem;
+    letter-spacing:0.04em;
+    border-radius:6px;
+    opacity:0;
+    transform:translateY(4px);
+    transition:opacity 0.15s ease, transform 0.15s ease;
+  }
+  .creation-card.filled .thumb:hover::after,
+  .creation-card.filled .thumb:focus-visible::after{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+
+  .emailing-card .thumb{ display:none; }
+  .email-preview{
+    position:relative;
+    overflow:hidden;
+    background:#ffffff;
+    height:280px;
+  }
+  .email-preview::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:70px;
+    background:linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.97) 85%);
+    pointer-events:none;
+  }
+  .email-frame{
+    border:0;
+    display:block;
+    background:#ffffff;
+  }
+  .emailing-actions{
+    padding:12px 16px;
+    border-top:1px solid var(--hairline);
+    display:flex;
+    justify-content:center;
+  }
+  .btn-small{
+    padding:8px 16px;
+    font-size:0.82rem;
+  }
+  .email-stats{
+    padding:14px 16px 4px;
+    border-top:1px solid var(--hairline);
+  }
+  .email-stats-title{
+    margin:0 0 10px;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gris-brume-mute);
+  }
+  .email-stats-meta{
+    margin:-4px 0 12px;
+    font-size:0.82rem;
+    color:var(--gris-brume);
+  }
+  .email-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:8px;
+  }
+  .email-stats-grid .stat{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+  }
+  .email-stats-grid .stat-num{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.05rem;
+    color:var(--menthe);
+    line-height:1.1;
+  }
+  .email-stats-grid .stat-label{
+    font-size:0.68rem;
+    color:var(--gris-brume-mute);
+    line-height:1.3;
+  }
+
+  .thumb-cropped{
+    height:280px;
+    overflow:hidden;
+  }
+  .thumb-cropped img{
+    height:100%;
+    object-fit:cover;
+    object-position:top;
+    box-shadow:none;
+  }
+  .thumb-cropped::before{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:70px;
+    background:linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.97) 85%);
+    pointer-events:none;
+  }
+
+  /* ============ LIGHTBOX ============ */
+  .lightbox{
+    position:fixed;
+    inset:0;
+    z-index:200;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:5vh 5vw;
+  }
+  .lightbox[hidden]{ display:none; }
+  .lightbox-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(6,6,6,0.88);
+  }
+  .lightbox-panel{
+    position:relative;
+    display:inline-flex;
+    flex-direction:column;
+    max-width:90vw;
+    max-height:90vh;
+    width:fit-content;
+    height:fit-content;
+    background:var(--noir-carbone-clair);
+    border-radius:8px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  }
+  .lightbox-panel img{
+    max-width:90vw;
+    max-height:82vh;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    display:block;
+  }
+  .lightbox-caption{
+    margin:0;
+    padding:14px 20px;
+    font-size:0.9rem;
+    color:var(--gris-brume-mute);
+    border-top:1px solid var(--hairline);
+  }
+  .lightbox-close{
+    position:fixed;
+    top:24px;
+    right:24px;
+    width:40px;
+    height:40px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.25);
+    background:rgba(18,18,18,0.9);
+    color:var(--gris-brume);
+    font-size:1.3rem;
+    line-height:1;
+    cursor:pointer;
+    z-index:10;
+  }
+  .lightbox-close:hover{ color:var(--menthe); border-color:var(--menthe); }
+
+  .lightbox-nav{
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%);
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.25);
+    background:rgba(18,18,18,0.9);
+    color:var(--gris-brume);
+    font-size:2rem;
+    line-height:1;
+    cursor:pointer;
+    z-index:10;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .lightbox-nav:hover{ color:var(--menthe); border-color:var(--menthe); }
+  .lightbox-prev{ left:16px; }
+  .lightbox-next{ right:16px; }
+  @media (max-width:640px){
+    .lightbox-nav{ width:42px; height:42px; font-size:1.5rem; }
+    .lightbox-prev{ left:8px; }
+    .lightbox-next{ right:8px; }
+  }
+
+  /* ============ CONTACT / EX-LIBRIS ============ */
+  .contact-block{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:32px;
+    flex-wrap:wrap;
+  }
+  .contact-block h2{
+    font-family:var(--font-display);
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    margin:0 0 12px;
+    max-width:16ch;
+  }
+  .contact-block p{
+    color:var(--gris-brume-mute);
+    margin:0;
+    max-width:48ch;
+  }
+  .contact-ctas{ display:flex; flex-direction:column; gap:14px; }
+
+  footer.ours{
+    padding:32px 0;
+    text-align:center;
+    font-size:0.8rem;
+    color:var(--gris-brume-mute);
+    letter-spacing:0.04em;
+  }
+  footer.ours .eco-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:10px;
+    padding:6px 14px;
+    border:1px solid var(--hairline);
+    border-radius:8px;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  footer.ours .eco-badge::before{ content:"●"; color:var(--menthe); font-size:0.6rem; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 860px){
+    .cover .wrap{ grid-template-columns:1fr; padding-top:40px; padding-bottom:40px; }
+    .cover-kicker-row{ flex-direction:column; align-items:flex-start; gap:6px; }
+    .cover-lines{ grid-column:1; border-left:none; border-top:1px solid var(--hairline); padding-left:0; padding-top:24px; }
+    .cover-lines-list{ flex-direction:row; flex-wrap:wrap; }
+    .cover-line{ flex:1 1 220px; border-bottom:none; padding-bottom:0; }
+    .intro-grid{ grid-template-columns:1fr; gap:40px; }
+    .creation-grid{ grid-template-columns:1fr 1fr; }
+    .contact-block{ grid-template-columns:1fr; }
+    nav.primary-nav ul{ gap:16px; font-size:0.75rem; }
+  }
+  @media (max-width: 560px){
+    .creation-grid{ grid-template-columns:1fr; }
+    section{ padding:56px 0; }
+    .sommaire-list a{ grid-template-columns:44px 1fr; }
+    .sommaire-list .sommaire-arrow{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a href="#accueil" class="masthead-title">Antoine Lesieux <span>·</span> Portfolio</a>
+    <nav class="primary-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#apropos">Profil</a></li>
+        <li><a href="#creations">Créations</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <!-- ============ COUVERTURE ============ -->
+  <section class="cover" id="accueil" aria-labelledby="cover-title">
+    <div class="wrap">
+      <div class="cover-main">
+        <div class="cover-portrait">
+          <img src="http://www.image-heberg.fr/files/17841888381615996397.webp" alt="Portrait d'Antoine Lesieux" loading="lazy" decoding="async">
+        </div>
+        <div class="cover-kicker-row">
+          <span>Creative Designer Senior — Emailing · Print · Digital · IA</span>
+          <span class="issue-number">18 ans d'expérience multicanale</span>
+        </div>
+        <h1 id="cover-title">Conception visuelle, performance B2B et intégration IA.</h1>
+        <p class="cover-standfirst">
+          Depuis 18 ans, je conçois et produis des supports de communication print et digitaux, en alliant
+          créativité, maîtrise technique et compréhension des enjeux business.
+          <br><br>
+          Mon parcours chez VINCI Immobilier, Solocal et Prisma Media m'a permis de mener des projets variés,
+          du webdesign aux campagnes d'emailing B2B, en passant par les supports print.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/antoine-lesieux-070943100/" target="_blank" rel="noopener">Échanger sur LinkedIn</a>
+          <a class="btn btn-secondary" href="mailto:antoinelesieux@gmail.com">Contactez-moi</a>
+        </div>
+      </div>
+
+      <aside class="cover-lines" aria-label="En couverture">
+        <p class="eyebrow">En couverture</p>
+        <dl class="cover-lines-list">
+          <div class="cover-line">
+            <dt>Emailing B2B</dt>
+            <dd>Conception graphique, HTML/CSS, routage, KPI</dd>
+          </div>
+          <div class="cover-line">
+            <dt>Design graphique</dt>
+            <dd>Photoshop, Illustrator, InDesign, Adobe Firefly</dd>
+          </div>
+          <div class="cover-line">
+            <dt>Print & événementiel</dt>
+            <dd>Invitations, kakémonos, brochures, pages magazines</dd>
+          </div>
+          <div class="cover-line">
+            <dt>IA générative</dt>
+            <dd>ChatGPT, Claude, Gemini, prompt engineering</dd>
+          </div>
+        </dl>
+        <div class="barcode" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ PROFIL ============ -->
+  <section id="apropos" aria-labelledby="apropos-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Profil</span>
+        <h2 id="apropos-title">Une vision complète de la création</h2>
+      </div>
+      <div class="intro-grid">
+        <div>
+          <p>
+            Mon rôle couvre l'ensemble de la chaîne créative : de la conception graphique à l'intégration
+            technique, avec une expertise particulière sur les dispositifs emailings, les supports
+            commerciaux et les productions événementielles.
+          </p>
+          <p>
+            Grâce à une double compétence créative et technique, je conçois des contenus à la fois
+            impactants, cohérents et adaptés aux enjeux business. J'intègre également les outils d'IA
+            générative dans mes workflows afin d'optimiser la production et enrichir les créations
+            visuelles.
+          </p>
+          <div class="availability-note">
+            Après une très belle expérience chez Prisma Media, je prépare aujourd'hui un nouveau chapitre
+            professionnel et suis ouvert aux opportunités dans le design graphique, le webdesign et la
+            communication digitale.
+          </div>
+        </div>
+
+        <ul class="expertise-list">
+          <li>
+            <span class="tag">01</span>
+            <div>
+              <h3>Emailing B2B</h3>
+              <p>Conception graphique, intégration HTML/CSS, routage, analyse statistiques</p>
+            </div>
+          </li>
+          <li>
+            <span class="tag">02</span>
+            <div>
+              <h3>Design graphique</h3>
+              <p>Photoshop, Illustrator, InDesign, Adobe Firefly</p>
+            </div>
+          </li>
+          <li>
+            <span class="tag">03</span>
+            <div>
+              <h3>Print & événementiel</h3>
+              <p>Invitations, kakémonos, brochures, pages print magazines (actualités commerciales)</p>
+            </div>
+          </li>
+          <li>
+            <span class="tag">04</span>
+            <div>
+              <h3>IA générative</h3>
+              <p>ChatGPT, Claude, Gemini, prompt engineering</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOMMAIRE ============ -->
+  <section id="creations" aria-labelledby="creations-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Sommaire</span>
+        <h2 id="creations-title">Mes créations</h2>
+      </div>
+      <ul class="sommaire-list">
+        <li>
+          <a href="#digital-crm">
+            <span class="sommaire-text">
+              <h3>Digital & CRM</h3>
+              <p>Newsletter et emailings B2B</p>
+            </span>
+            <span class="sommaire-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#print-editorial">
+            <span class="sommaire-text">
+              <h3>Print éditorial</h3>
+              <p>Actualités commerciales et communications B2B</p>
+            </span>
+            <span class="sommaire-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="#print-evenementiel">
+            <span class="sommaire-text">
+              <h3>Print événementiel</h3>
+              <p>Invitations et cartes de vœux</p>
+            </span>
+            <span class="sommaire-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ RUBRIQUE 1 : DIGITAL & CRM ============ -->
+  <section id="digital-crm" aria-labelledby="digital-crm-title">
+    <div class="wrap">
+      <div class="spread-head">
+        <div>
+          <p class="spread-kicker">01</p>
+          <h2 id="digital-crm-title">Digital & CRM</h2>
+        </div>
+        <p class="page-ref">Emailings et newsletter</p>
+      </div>
+      <p class="spread-desc">
+        Conception et intégration de campagnes d'emailing B2B, du brief créatif au routage,
+        avec suivi et analyse des performances (KPI). Maîtrise des plateformes Splio, Dolist et Mailchimp.
+      </p>
+      <div class="creation-grid">
+        <figure class="creation-card filled emailing-card">
+          <div class="email-preview" data-email-id="1">
+            <iframe class="email-frame" title="Aperçu de l'emailing — Harvard Business Review France — Été 2026" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="email-stats">
+            <p class="email-stats-title">Performance</p>
+            <div class="email-stats-grid">
+              <div class="stat">
+                <span class="stat-num">6 728</span>
+                <span class="stat-label">Contacts ciblés</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">21,91 %</span>
+                <span class="stat-label">Taux d'ouverture</span>
+              </div>
+            </div>
+          </div>
+          <div class="emailing-actions">
+            <button type="button" class="btn btn-secondary btn-small" data-email-open="1">Ouvrir en plein écran ⤢</button>
+          </div>
+          <figcaption>Harvard Business Review France — Emailing B2B, rentrée éditoriale</figcaption>
+        </figure>
+        <figure class="creation-card filled emailing-card">
+          <div class="email-preview" data-email-id="2">
+            <iframe class="email-frame" title="Aperçu de l'emailing — Observatoire Santé — 5ème édition" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="email-stats">
+            <p class="email-stats-title">Performance</p>
+            <div class="email-stats-grid">
+              <div class="stat">
+                <span class="stat-num">441</span>
+                <span class="stat-label">Contacts ciblés</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">20,6 %</span>
+                <span class="stat-label">Taux d'ouverture</span>
+              </div>
+            </div>
+          </div>
+          <div class="emailing-actions">
+            <button type="button" class="btn btn-secondary btn-small" data-email-open="2">Ouvrir en plein écran ⤢</button>
+          </div>
+          <figcaption>Observatoire Santé — 5ème édition</figcaption>
+        </figure>
+        <figure class="creation-card filled emailing-card">
+          <div class="email-preview" data-email-id="3">
+            <iframe class="email-frame" title="Aperçu de l'emailing — Transition énergétique — Prisma Media Solutions" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="email-stats">
+            <p class="email-stats-title">Performance</p>
+            <div class="email-stats-grid">
+              <div class="stat">
+                <span class="stat-num">715</span>
+                <span class="stat-label">Contacts ciblés</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">34,47 %</span>
+                <span class="stat-label">Taux d'ouverture</span>
+              </div>
+            </div>
+          </div>
+          <div class="emailing-actions">
+            <button type="button" class="btn btn-secondary btn-small" data-email-open="3">Ouvrir en plein écran ⤢</button>
+          </div>
+          <figcaption>Offre commerciale Content for LLM</figcaption>
+        </figure>
+        <figure class="creation-card filled emailing-card">
+          <div class="email-preview" data-email-id="4">
+            <iframe class="email-frame" title="Aperçu de l'emailing — Télé-Loisirs — 40 ans" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="email-stats">
+            <p class="email-stats-title">Performance</p>
+            <div class="email-stats-grid">
+              <div class="stat">
+                <span class="stat-num">10 226</span>
+                <span class="stat-label">Contacts ciblés</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">23,34 %</span>
+                <span class="stat-label">Taux d'ouverture</span>
+              </div>
+            </div>
+          </div>
+          <div class="emailing-actions">
+            <button type="button" class="btn btn-secondary btn-small" data-email-open="4">Ouvrir en plein écran ⤢</button>
+          </div>
+          <figcaption>Évènement : 40 ans de Télé-Loisirs</figcaption>
+        </figure>
+        <figure class="creation-card filled emailing-card">
+          <div class="email-preview" data-email-id="5">
+            <iframe class="email-frame" title="Aperçu de l'emailing — Harper's Bazaar Homme" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
+          <div class="email-stats">
+            <p class="email-stats-title">Performance</p>
+            <div class="email-stats-grid">
+              <div class="stat">
+                <span class="stat-num">~10 000</span>
+                <span class="stat-label">Contacts actifs ciblés</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">29,02 %</span>
+                <span class="stat-label">Taux d'ouverture</span>
+              </div>
+            </div>
+          </div>
+          <div class="emailing-actions">
+            <button type="button" class="btn btn-secondary btn-small" data-email-open="5">Ouvrir en plein écran ⤢</button>
+          </div>
+          <figcaption>Lancement du Harper's Bazaar Homme</figcaption>
+        </figure>
+        <figure class="creation-card filled">
+          <button type="button" class="thumb thumb-cropped" data-lightbox-max-width="600" aria-label="Agrandir : Newsletter Prisma Media Solutions">
+            <img src="http://www.image-heberg.fr/files/17841876003522360314.webp" alt="Newsletter de la régie publicitaire Prisma Media Solutions" loading="lazy" decoding="async">
+          </button>
+          <div class="email-stats">
+            <p class="email-stats-title">Performance</p>
+            <div class="email-stats-grid">
+              <div class="stat">
+                <span class="stat-num">~10 000</span>
+                <span class="stat-label">Contacts actifs ciblés</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">44 %</span>
+                <span class="stat-label">Taux d'ouverture moyen (2025)</span>
+              </div>
+            </div>
+          </div>
+          <figcaption>Newsletter — Prisma Media Solutions — Envoi mensuel</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RUBRIQUE 2 : PRINT ÉDITORIAL ============ -->
+  <section id="print-editorial" aria-labelledby="print-editorial-title">
+    <div class="wrap">
+      <div class="spread-head">
+        <div>
+          <p class="spread-kicker">02</p>
+          <h2 id="print-editorial-title">Print éditorial</h2>
+        </div>
+        <p class="page-ref">Actualités commerciales et communications B2B</p>
+      </div>
+      <p class="spread-desc">
+        Actualités commerciales et communications B2B conçues pour les magazines
+        et supports annonceurs.
+      </p>
+      <div class="creation-subgroup">
+        <div class="creation-subgroup-head">
+          <span class="subnum">01</span>
+          <h3>Actualités commerciales</h3>
+        </div>
+        <div class="creation-grid">
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Page d'actualité commerciale — visuel 1">
+              <img src="https://i.postimg.cc/vmQNpNbZ/actualite-commerciale-capital.webp" alt="Page d'actualité commerciale — visuel 1" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Actualité commerciale Capital</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Page d'actualité commerciale — visuel 2">
+              <img src="http://www.image-heberg.fr/files/17842111231214138107.webp" alt="Page d'actualité commerciale — visuel 2" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Actualité commerciale GEO</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Page d'actualité commerciale — visuel 3">
+              <img src="https://www.image-heberg.fr/files/17857609503606797094.webp" alt="Page d'actualité commerciale — visuel 3" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Actualité commerciale Prima</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="creation-subgroup">
+        <div class="creation-subgroup-head">
+          <span class="subnum">02</span>
+          <h3>Communications print B2B</h3>
+        </div>
+        <div class="creation-grid">
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Communication print B2B — visuel 1">
+              <img src="http://www.image-heberg.fr/files/17841825771809877769.webp" alt="Communication print B2B — visuel 1" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Création d'une page autour du dossier Spécial Beauté de Femme Actuelle, mettant en avant le positionnement de la marque, son audience et ses atouts auprès des annonceurs.</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Communication print B2B — visuel 2">
+              <img src="http://www.image-heberg.fr/files/17841826122388411585.webp" alt="Communication print B2B — visuel 2" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Création d'une page pour promouvoir la plateforme publicitaire B2B de Prisma Media auprès des TPE, PME et franchisés.</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Communication print B2B — visuel 3">
+              <img src="http://www.image-heberg.fr/files/17841826692922205247.webp" alt="Communication print B2B — visuel 3" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Création d'une page mettant en avant la puissance des marques féminines de Prisma Media.</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Communication print B2B — visuel 4">
+              <img src="http://www.image-heberg.fr/files/1784184213883524639.webp" alt="Communication print B2B — visuel 4" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Création d'un support institutionnel présentant la diversité des marques de Prisma Media.</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Communication print B2B — visuel 5">
+              <img src="http://www.image-heberg.fr/files/17841826372973071903.webp" alt="Communication print B2B — visuel 5" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Création d'une page présentant l'offre PMS Adtech.</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Communication print B2B — visuel 6">
+              <img src="http://www.image-heberg.fr/files/17841827244210659434.webp" alt="Communication print B2B — visuel 6" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Création d'une page consacrée à l'offre santé de Prisma Media, mettant en avant la puissance des audiences print et digitales et la complémentarité des marques du groupe.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RUBRIQUE 3 : PRINT ÉVÉNEMENTIEL ============ -->
+  <section id="print-evenementiel" aria-labelledby="print-evenementiel-title">
+    <div class="wrap">
+      <div class="spread-head">
+        <div>
+          <p class="spread-kicker">03</p>
+          <h2 id="print-evenementiel-title">Print événementiel</h2>
+        </div>
+        <p class="page-ref">Invitations & Carte de vœux</p>
+      </div>
+      <p class="spread-desc">
+        Créations pour temps forts et relations annonceurs : invitations et cartes de vœux.
+      </p>
+      <div class="creation-subgroup">
+        <div class="creation-subgroup-head">
+          <span class="subnum">01</span>
+          <h3>Invitations</h3>
+        </div>
+        <div class="creation-grid">
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Invitation Dîner de printemps">
+              <img src="https://i.postimg.cc/Dz1pp6ny/invitation-diner-de-printemps.webp" alt="Invitation — Dîner de printemps" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Invitation — Dîner de printemps 2019</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Invitation Garden Party 2022">
+              <img src="https://i.postimg.cc/cJfkkh0J/invitation-garden-party-2022.webp" alt="Invitation — Garden Party 2022" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Invitation — Garden Party 2022</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Invitation Garden Party 2023">
+              <img src="https://i.postimg.cc/wBD442gj/invitation-garden-party-2023.webp" alt="Invitation — Garden Party 2023" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Invitation — Garden Party 2023</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Invitation Garden Party 2024">
+              <img src="https://i.postimg.cc/Xv911L4N/invitation-garden-party-2024.webp" alt="Invitation — Garden Party 2024" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Invitation — Garden Party 2024</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Invitation Mostra 2024">
+              <img src="https://i.postimg.cc/85DK2vzg/invitation-mostra2024.webp" alt="Invitation — Mostra 2024" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Invitation — Mostra 2024</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Invitation The Good Life">
+              <img src="https://i.postimg.cc/SsqTB9xp/invitation-the-good-life.webp" alt="Invitation — The Good Life" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Invitation — The Good Life</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="creation-subgroup">
+        <div class="creation-subgroup-head">
+          <span class="subnum">02</span>
+          <h3>Cartes de vœux</h3>
+        </div>
+        <div class="creation-grid">
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Carte de vœux 2020">
+              <img src="https://i.postimg.cc/rwnCffhX/carte-de-voeux-2020.webp" alt="Carte de vœux 2020" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Création d'une carte de vœux illustrant le développement de Prisma Media et l'élargissement de son portefeuille de marques en 2020.</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Carte de vœux 2024">
+              <img src="https://i.postimg.cc/Y91FBRxY/carte-de-voeux-2024.webp" alt="Carte de vœux 2024" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Création d'une carte de vœux 2024 pour Prisma Media et Vivendi, autour d'un trait continu symbolisant l'élan et le renouveau.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-block">
+      <div>
+        <h2 id="contact-title">Un nouveau chapitre à écrire ensemble ?</h2>
+        <p>
+          Je suis ouvert aux opportunités dans le design graphique, la communication
+          et la création de contenus.
+        </p>
+      </div>
+      <div class="contact-ctas">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/antoine-lesieux-070943100/" target="_blank" rel="noopener">Échanger sur LinkedIn</a>
+        <a class="btn btn-secondary" href="mailto:antoinelesieux@gmail.com">Contactez-moi</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ours">
+  <div class="wrap">
+    Antoine Lesieux — Portfolio · Charte graphique « Midnight Editorial »
+    <br>
+    <span class="eco-badge">Site éco-conçu · WCAG / RGAA</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lightbox-backdrop" data-close="true"></div>
+  <button type="button" class="lightbox-nav lightbox-prev" data-nav="prev" aria-label="Création précédente">&#8249;</button>
+  <button type="button" class="lightbox-nav lightbox-next" data-nav="next" aria-label="Création suivante">&#8250;</button>
+  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption">
+    <button type="button" class="lightbox-close" data-close="true" aria-label="Fermer l'aperçu">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption" class="lightbox-caption"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+  var closeBtn = lightbox.querySelector('.lightbox-close');
+  var prevBtn = lightbox.querySelector('.lightbox-prev');
+  var nextBtn = lightbox.querySelector('.lightbox-next');
+  var lastFocused = null;
+  var thumbs = [];
+  var currentIndex = -1;
+
+  function renderTrigger(trigger){
+    var img = trigger.querySelector('img');
+    if(!img) return;
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    var maxWidth = trigger.getAttribute('data-lightbox-max-width');
+    if(maxWidth){
+      lightboxImg.style.maxWidth = 'min(' + maxWidth + 'px, 90vw)';
+      lightboxImg.style.maxHeight = 'none';
+    } else {
+      lightboxImg.style.maxWidth = '';
+      lightboxImg.style.maxHeight = '';
+    }
+    var figure = trigger.closest('figure');
+    var figcaption = figure ? figure.querySelector('figcaption') : null;
+    lightboxCaption.textContent = figcaption ? figcaption.textContent : img.alt;
+  }
+
+  function updateNavVisibility(){
+    var hasMultiple = thumbs.length > 1;
+    prevBtn.style.display = hasMultiple ? '' : 'none';
+    nextBtn.style.display = hasMultiple ? '' : 'none';
+  }
+
+  function openLightbox(trigger){
+    lastFocused = trigger;
+    thumbs = Array.from(document.querySelectorAll('button.thumb'));
+    currentIndex = thumbs.indexOf(trigger);
+    renderTrigger(trigger);
+    updateNavVisibility();
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function showAt(index){
+    if(!thumbs.length) return;
+    currentIndex = (index + thumbs.length) % thumbs.length;
+    renderTrigger(thumbs[currentIndex]);
+  }
+
+  function showPrev(){ showAt(currentIndex - 1); }
+  function showNext(){ showAt(currentIndex + 1); }
+
+  function closeLightbox(){
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+    document.removeEventListener('keydown', onKeydown);
+    if(lastFocused){ lastFocused.focus(); }
+  }
+
+  function getFocusableEls(){
+    var els = [closeBtn];
+    if(thumbs.length > 1){ els.unshift(nextBtn); els.unshift(prevBtn); }
+    return els;
+  }
+
+  function onKeydown(e){
+    if(e.key === 'Escape'){ closeLightbox(); }
+    if(e.key === 'ArrowLeft'){ showPrev(); }
+    if(e.key === 'ArrowRight'){ showNext(); }
+    if(e.key === 'Tab'){
+      e.preventDefault();
+      var focusable = getFocusableEls();
+      var idx = focusable.indexOf(document.activeElement);
+      var next;
+      if(e.shiftKey){
+        next = idx <= 0 ? focusable[focusable.length - 1] : focusable[idx - 1];
+      } else {
+        next = idx === -1 || idx === focusable.length - 1 ? focusable[0] : focusable[idx + 1];
+      }
+      next.focus();
+    }
+  }
+
+  document.querySelectorAll('.creation-card.filled .thumb').forEach(function(trigger){
+    trigger.addEventListener('click', function(){ openLightbox(trigger); });
+  });
+
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+
+  lightbox.querySelectorAll('[data-close]').forEach(function(el){
+    el.addEventListener('click', closeLightbox);
+  });
+})();
+</script>
+
+<script type="text/plain" id="email-html-1"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Harvard Business Review France - Été 2026 - V2</title>
+  <style type="text/css">
+    body, table, td { font-family: Arial, Helvetica, sans-serif; }
+    body { margin: 0; padding: 0; background-color: #eef0f4; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    img { border: 0; outline: none; text-decoration: none; display: block; }
+    table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    a { text-decoration: none; }
+    .wrapper { width: 100%; background-color: #eef0f4; }
+    .container { width: 600px; max-width: 600px; margin: 0 auto; background-color: #ffffff; }
+    @media only screen and (max-width: 620px) {
+      .container { width: 100% !important; }
+      .fluid-img { width: 100% !important; height: auto !important; }
+      .stack { display: block !important; width: 100% !important; box-sizing: border-box !important; padding: 10px 0 !important; }
+      .pad-mobile { padding-left: 20px !important; padding-right: 20px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0; padding:0; background-color:#eef0f4;">
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    Harvard Business Review France, la source internationale de référence du monde des affaires, consolide ses positions sur la dernière vague de l'étude ONE Next Influence (2026).
+  </div>
+  <table role="presentation" class="wrapper" width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td align="center" style="padding: 20px 10px; background-color:#eef0f4;">
+        <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;">
+          <tr>
+            <td align="center" style="background-color:#eef0f4; padding: 20px 20px 20px 20px;">
+              <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank" splio-link-id="2">
+                <img src="https://www.prismamedia.com/app/uploads/2026/07/LOGO_PRISMA_SOLUTIONS_RVB.png" alt="Prisma Media Solutions" width="160" style="display:block; border:0;">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <a href="https://www.prismamedia.com/marques/harvard-business-review/" target="_blank" splio-link-id="3">
+                <img src="https://www.prismamedia.com/app/uploads/2026/07/header-hbr-7.jpg" alt="Connaissez-vous le titre le plus haut de gamme de toute la presse française ?" width="600" class="fluid-img" style="display:block; width:100%; height:auto; border:0;">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#14213d; padding: 35px 40px 30px 40px;" class="pad-mobile">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="padding-bottom: 18px;">
+                    <a href="https://www.hbrfrance.fr/" target="_blank" splio-link-id="4">
+                      <img src="https://www.prismamedia.com/app/uploads/2026/07/HBR-BLANC.png" alt="Harvard Business Review France" width="120" style="display:block; border:0;">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding-bottom: 16px;">
+                    <p style="margin:0; font-size:21px; line-height:27px; color:#ffffff; font-weight:bold;">
+                      Connaissez-vous <span style="color:#e4003c;">le titre le plus haut de gamme</span><br />de toute la presse française ?
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <p style="margin:0; font-size:14px; line-height:21px; color:#ffffff;">
+                      <strong>Harvard Business Review France, la source internationale de référence du monde des affaires, consolide ses positions sur la dernière vague de l'étude ONE Next Influence (2026).</strong>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#14213d; padding: 0 20px 35px 20px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="50%" valign="top" class="stack" style="padding: 0 6px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #2a3a5c;">
+                      <tr>
+                        <td align="center" style="padding: 22px 10px 4px 10px;">
+                          <span style="font-size:38px; font-weight:bold; color:#e4003c; line-height:38px;">N°1</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding: 0 10px 12px 10px;">
+                          <span style="font-size:13px; color:#ffffff;">sur les plus <strong>Hauts Décideurs</strong></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding: 12px 10px 22px 10px; border-top:1px solid #2a3a5c;">
+                          <span style="font-size:12px; color:#c7c9d1;">Indice <strong style="color:#ffffff;">365</strong> sur les Membres de Comex</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td width="50%" valign="top" class="stack" style="padding: 0 6px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #2a3a5c;">
+                      <tr>
+                        <td align="center" style="padding: 22px 10px 4px 10px;">
+                          <span style="font-size:38px; font-weight:bold; color:#e4003c; line-height:38px;">N°1</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding: 0 10px 12px 10px;">
+                          <span style="font-size:13px; color:#ffffff;">sur les plus <strong>Hauts Revenus</strong></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding: 12px 10px 22px 10px; border-top:1px solid #2a3a5c;">
+                          <span style="font-size:12px; color:#c7c9d1;">Indice <strong style="color:#ffffff;">325</strong> sur les Top1%</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="background-color:#14213d; padding: 5px 45px 10px 45px;" class="pad-mobile">
+              <p style="margin:0; font-size:17px; line-height:24px; color:#ffffff; font-style:italic;">
+                « Un lectorat au sommet des pouvoirs d'achat & de prescription »
+              </p>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 14px auto 0 auto;">
+                <tr><td style="border-top:2px solid #e4003c; width:40px; font-size:0; line-height:0;"> </td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="background-color:#14213d; padding: 12px 40px 25px 40px;" class="pad-mobile">
+              <p style="margin:0; font-size:10px; line-height:15px; color:#ffffff;">
+                Source : dernière vague (2026) ACPM ONE Next Influence<br>
+                HBR France : n°1 en affinité parmi les 203 supports étudiés (30J)
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="background-color:#14213d; padding: 0 20px 40px 20px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="border:2px solid #ffffff; border-radius:2px;">
+                    <a href="https://www.prismamedia.com/marques/harvard-business-review/" target="_blank" style="display:inline-block; padding:13px 26px; font-size:13px; font-weight:bold; color:#ffffff; letter-spacing:0.5px;" splio-link-id="5">
+                      EN SAVOIR PLUS SUR HARVARD BUSINESS REVIEW FRANCE
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f7f7f9; padding: 40px 40px 15px 40px;" class="pad-mobile">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="padding-bottom: 5px;">
+                    <span style="color:#e4003c; font-size:12px; font-weight:bold; letter-spacing:1px;">CALENDRIER ÉDITORIAL</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <span style="color:#1a1a2e; font-size:19px; font-weight:bold;">Des contenus de qualité pour les Top Influenceurs</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f7f7f9; padding: 0 40px 10px 40px;" class="pad-mobile">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td width="16" valign="top" align="center">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr><td style="width:8px; height:8px; background-color:#e4003c; border-radius:4px; font-size:0; line-height:0;"> </td></tr>
+                      <tr><td width="1" height="50" style="background-color:#d8d9e0; font-size:0; line-height:0;"> </td></tr>
+                    </table>
+                  </td>
+                  <td width="14"> </td>
+                  <td valign="top" style="padding-bottom:25px;">
+                    <p style="margin:0; font-size:14px; line-height:20px; color:#1a1a2e;">
+                      Bimestriel <strong>Août-Septembre</strong> : Sujets RH, IA, Stratégie, Innovation…<br>
+                      <span style="font-size:12px; font-style:italic; color:#8a8f98;">Parution 12 août · Bouclage 20 juillet</span>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="16" valign="top" align="center">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr><td style="width:8px; height:8px; background-color:#e4003c; border-radius:4px; font-size:0; line-height:0;"> </td></tr>
+                      <tr><td width="1" height="50" style="background-color:#d8d9e0; font-size:0; line-height:0;"> </td></tr>
+                    </table>
+                  </td>
+                  <td width="14"> </td>
+                  <td valign="top" style="padding-bottom:25px;">
+                    <p style="margin:0; font-size:14px; line-height:20px; color:#1a1a2e;">
+                      Hors-Série <strong>Septembre-Octobre</strong> : Enjeux et perspectives de l'IA<br>
+                      <span style="font-size:12px; font-style:italic; color:#8a8f98;">Parution 9 septembre · Bouclage 18 août</span>
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="16" valign="top" align="center">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr><td style="width:8px; height:8px; background-color:#e4003c; border-radius:4px; font-size:0; line-height:0;"> </td></tr>
+                    </table>
+                  </td>
+                  <td width="14"> </td>
+                  <td valign="top" style="padding-bottom:10px;">
+                    <p style="margin:0; font-size:14px; line-height:20px; color:#1a1a2e;">
+                      Bimestriel <strong>Octobre-Novembre</strong> : Sujets Data, Leadership, Management, Tech & IA…<br>
+                      <span style="font-size:12px; font-style:italic; color:#8a8f98;">Parution 7 octobre · Bouclage 14 septembre</span>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#f7f7f9; padding: 15px 40px 40px 40px;" class="pad-mobile">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="background-color:#e4003c; border-radius:2px;">
+                    <a href="mailto:antoinelesieux@gmail.com" target="_blank" style="display:block; padding:15px 20px; font-size:13px; font-weight:bold; color:#ffffff; letter-spacing:0.5px;" splio-link-id="6">
+                      JE SOUHAITE SAISIR CES OPPORTUNITÉS DE COMMUNICATION
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 35px 40px 30px 40px;" class="pad-mobile">
+              <p style="margin:0 0 20px 0; font-size:14px; font-weight:bold; letter-spacing:1px; color:#8a8f98;">CONTACTEZ-NOUS</p>
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+                <tr>
+                  <td valign="middle" align="center">
+                    <p style="margin:0; font-size:16px; font-weight:bold; color:#1a1a2e;">Antoine Lesieux</p>
+                    <p style="margin:2px 0 0 0; font-size:14px;"><a href="mailto:antoinelesieux@gmail.com" style="color:#e4003c;" splio-link-id="8">antoinelesieux@gmail.com</a></p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 40px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr><td style="border-top:1px solid #e5e5ea; font-size:0; line-height:0; height:1px;"> </td></tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 25px 20px 30px 20px;">
+              <a href="https://www.hbrfrance.fr/" target="_blank" splio-link-id="9">
+                <img src="https://www.prismamedia.com/app/uploads/2026/07/HBR-NOIR.png" alt="Harvard Business Review France" width="90" style="display:block; margin:0 auto 12px auto; border:0;">
+              </a>
+              <p style="margin:0; font-size:13px; font-style:italic; font-weight:bold; color:#1a1a2e;">
+                "Réfléchir et agir avec un temps d'avance"
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html></script>
+<script type="text/plain" id="email-html-2"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrez la 5ème édition de notre Observatoire Santé</title>
+    <!--[if gte mso 9]>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <style type="text/css">
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #F4F4F4; }
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; -ms-interpolation-mode: bicubic; }
+        
+        /* Media Queries Mobile */
+        @media screen and (max-width: 660px) {
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 100% !important;
+            }
+            .fluid-img {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            .pad-mobile {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            .mobile-button {
+                width: 100% !important;
+                max-width: 100% !important;
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #F4F4F4; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+
+<!-- Preheader caché -->
+<span style="display:none; font-size:1px; color:#f4f4f4; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
+    Découvrez comment les Français vivent la santé depuis 10 ans, grâce à notre étude barométrique exclusive.
+</span>
+
+<!-- TABLEAU GLOBAL -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F4F4F4" role="presentation">
+    <tr>
+        <td align="center">
+            
+            <!-- LOGO HEADER -->
+            <table border="0" cellpadding="0" cellspacing="0" width="660" class="email-container" role="presentation" style="max-width: 660px; width: 660px;">
+                <tr>
+                    <td align="center" style="padding: 40px 20px 24px;">
+                        <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank">
+                            <img src="https://brand-assets.mailchimp.com/01KKVF4ZTAFRDSJ1NM0FV6C48V.png" width="214" alt="Logo Prisma Media Solutions" style="display: block; width: 214px; max-width: 214px; height: auto;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- BANNIÈRE HEADER -->
+            <table border="0" cellpadding="0" cellspacing="0" width="660" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 660px; width: 660px; background-color: #ffffff;">
+                <tr>
+                    <td align="center" valign="top">
+                        <a href="https://www.prismamedia.com/app/uploads/2026/03/header-sante.jpg" target="_blank">
+                            <img src="https://mcusercontent.com/664dd918f9540e6fe0ee66a8d/images/902614cf-58f3-6c2b-b58f-9e56b5f668a3.jpg" width="660" class="fluid-img" alt="Observatoire Santé" style="display: block; width: 100%; max-width: 660px; height: auto;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- CONTENU PRINCIPAL -->
+            <table border="0" cellpadding="0" cellspacing="0" width="660" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 660px; width: 660px; background-color: #ffffff;">
+                
+                <!-- Titre -->
+                <tr>
+                    <td align="center" class="pad-mobile" style="padding: 30px 30px 15px;">
+                        <p style="margin: 0; font-size: 22px; font-weight: bold; color: #031e50; line-height: 1.3; text-align: center;">
+                            Prisma Media Solutions dévoile <br>
+                            "Santé : de prérogative à (pré)occupation", <br>
+                            la 5ème édition de son Observatoire Santé
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- Chapeau -->
+                <tr>
+                    <td align="center" class="pad-mobile" style="padding: 0 30px 20px;">
+                        <p style="margin: 0; font-size: 15px; color: #031e50; line-height: 1.5; text-align: center;">
+                            Entre inquiétudes autour d’un système de santé toujours plus chahuté et implémentation toujours plus forte de ses préceptes dans le quotidien, <strong>découvrez comment les Français vivent la santé depuis 10 ans</strong>, grâce à notre étude barométrique exclusive.
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- Encadré Bleu Nouveauté -->
+                <tr>
+                    <td align="center" class="pad-mobile" style="padding: 0 30px 25px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#E2F0F3" style="background-color: #e2f0f3; border-radius: 8px;" role="presentation">
+                            <tr>
+                                <td align="center" style="padding: 16px 20px;">
+                                    <p style="margin: 0; font-size: 15px; line-height: 1.5; text-align: center;">
+                                        <strong><span style="color: #01879a;">Nouveauté de l'édition 2026 : </span></strong>
+                                        <span style="color: #031e50;">un volet inédit sur la santé mentale, grande cause gouvernementale 2025 &amp; 2026.</span>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Bouton RDV -->
+                <tr>
+                    <td align="center" class="pad-mobile" style="padding: 10px 30px 30px;">
+                        <!--[if mso]>
+                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="mailto:pmssante@prismamedia.com?subject=Contactez-nous%20pour%20r%C3%A9server%20un%20RDV%20de%20pr%C3%A9sentation%20&body=" style="height:50px;v-text-anchor:middle;width:480px;" arcsize="0%" stroke="f" fillcolor="#038a9d">
+                          <center style="color:#ffffff;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;">Contactez-nous pour réserver un RDV de présentation →</center>
+                        </v:roundrect>
+                        <![endif]-->
+                        <!--[if !mso]><!-->
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" class="mobile-button">
+                            <tr>
+                                <td align="center" bgcolor="#038a9d" style="background-color: #038a9d; padding: 16px 28px;">
+                                    <a href="mailto:pmssante@prismamedia.com?subject=Contactez-nous%20pour%20r%C3%A9server%20un%20RDV%20de%20pr%C3%A9sentation%20&body=" target="_blank" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: bold; display: inline-block;">
+                                        Contactez-nous pour réserver un RDV de présentation →
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--<![endif]-->
+                    </td>
+                </tr>
+
+                <!-- Infographie -->
+                <tr>
+                    <td align="center" class="pad-mobile" style="padding: 0 20px 10px;">
+                        <a href="https://www.prismamedia.com/app/uploads/2026/03/infographie-sante.jpg" target="_blank">
+                            <img src="https://mcusercontent.com/664dd918f9540e6fe0ee66a8d/images/8eaff1fc-bb46-87e6-d507-67d5b4e94595.jpg" width="520" class="fluid-img" alt="Infographie Observatoire Santé" style="display: block; width: 100%; max-width: 520px; height: auto;">
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- Légende Source -->
+                <tr>
+                    <td align="center" class="pad-mobile" style="padding: 10px 30px 30px;">
+                        <p style="margin: 0; font-size: 12px; color: #666666; line-height: 1.4; text-align: center;">
+                            Source : 5ème édition de l'Observatoire Santé "Santé : de prérogative à préoccupation",<br>
+                            Prisma Media Solutions &amp; CSA, 2026, échantillon représentatif de 1002 Français de 15 ans et +
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- SECTION CONTACT -->
+                <tr>
+                    <td align="center" class="pad-mobile" style="padding: 20px 30px 10px;">
+                        <h2 style="margin: 0; font-size: 22px; font-weight: bold; color: #000000; text-align: center;">Contactez-nous</h2>
+                    </td>
+                </tr>
+
+                <!-- Bloc Contact Unique (Antoine Lesieux) -->
+                <tr>
+                    <td align="center" class="pad-mobile" style="padding: 10px 30px 40px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td align="center">
+                                    <p style="margin: 0 0 6px 0; font-size: 16px; font-weight: bold; color: #000000;">Antoine Lesieux</p>
+                                    <p style="margin: 0; font-size: 15px;">
+                                        <a href="mailto:antoinelesieux@gmail.com" style="color: #038a9d; text-decoration: underline;">antoinelesieux@gmail.com</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+
+            <!-- FOOTER RESEAUX SOCIAUX & MARQUES -->
+            <table border="0" cellpadding="0" cellspacing="0" width="660" bgcolor="#000000" class="email-container" role="presentation" style="max-width: 660px; width: 660px; background-color: #000000;">
+                <tr>
+                    <td align="center" style="padding: 25px 20px 15px;">
+                        <p style="margin: 0; font-size: 14px; color: #ffffff; line-height: 1.6; text-align: center;">
+                            Retrouvez Prisma Media sur les réseaux sociaux <br>
+                            <a href="http://linkedin.com/company/prisma-media" target="_blank" style="color: #ffffff; text-decoration: underline;">Linkedin</a> • 
+                            <a href="https://www.instagram.com/prismamedia/?hl=fr" target="_blank" style="color: #ffffff; text-decoration: underline;">Instagram</a> • 
+                            <a href="https://www.youtube.com/channel/UCiGwiv9aGeLuOzcxCvGPaQw" target="_blank" style="color: #ffffff; text-decoration: underline;">Youtube</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding: 0 20px 30px;">
+                        <!--[if mso]>
+                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.prismamedia.com/marques/" style="height:45px;v-text-anchor:middle;width:220px;" arcsize="0%" stroke="f" fillcolor="#ffffff">
+                          <center style="color:#000000;font-family:Helvetica,Arial,sans-serif;font-size:14px;">Découvrir nos marques</center>
+                        </v:roundrect>
+                        <![endif]-->
+                        <!--[if !mso]><!-->
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td align="center" bgcolor="#FFFFFF" style="background-color: #ffffff; padding: 12px 24px;">
+                                    <a href="https://www.prismamedia.com/marques/" target="_blank" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: normal; display: inline-block;">
+                                        Découvrir nos marques
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--<![endif]-->
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html></script>
+<script type="text/plain" id="email-html-3"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisma Media Solutions</title>
+    <!--[if gte mso 9]>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <style type="text/css">
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #ECEFF1; }
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+        
+        /* Media Queries pour la réactivité */
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 100% !important;
+            }
+            .fluid-img {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            .mobile-padding {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            .cfllm-steps-col {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box;
+                padding-bottom: 25px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #ECEFF1; font-family: Arial, Helvetica, sans-serif;">
+
+<!-- Preheader cach&eacute; -->
+<span style="display:none; font-size:1px; color:#ffffff; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
+  Aujourd'hui, le consommateur ne veut plus choisir entre fin de mois et fin du monde...
+</span>
+
+<!-- TABLEAU GLOBAL -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ECEFF1" role="presentation">
+    <tr>
+        <td align="center">
+            
+            <!-- HEADER LOGO -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" role="presentation" style="max-width: 600px; width: 600px;">
+                <tr>
+                    <td align="center" style="padding: 25px 10px;">
+                        <a href="https://www.prismamedia.com/prismamediasolutions/actualites/prisma-media-solutions-innove-avec-content-for-llm-loffre-qui-optimise-et-mesure-votre-visibilite-dans-les-reponses-ia/" target="_blank">
+                            <img src="https://www.prismamedia.com/app/uploads/2024/01/logo-prisma-media-solutions-emailing.png" width="180" alt="Logo Prisma Media Solutions" style="display: block; width: 180px; max-width: 180px; height: auto; border: 0;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- IMAGE HEADER -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F5F5F7" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #F5F5F7;">
+                <tr>
+                    <td align="center" valign="top">
+                        <a href="https://www.prismamedia.com/prismamediasolutions/actualites/prisma-media-solutions-innove-avec-content-for-llm-loffre-qui-optimise-et-mesure-votre-visibilite-dans-les-reponses-ia/" target="_blank">
+                            <img src="https://www.prismamedia.com/app/uploads/2026/05/header-transition-energetique.jpg" width="600" class="fluid-img" alt="Quel fournisseur d'énergie verte offre le meilleur rapport qualité / prix ?" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- BLOC INFOGRAPHIE -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 36px 40px 8px;">
+                        <p style="margin: 0 0 24px 0;">
+                            <span style="display: inline-block; background-color: #eaf3e2; border-radius: 4px; padding: 5px 14px; font-size: 14px; font-weight: bold; color: #50852b; letter-spacing: 1px; text-transform: uppercase;">Transition énergétique</span>
+                        </p>
+                        <p style="margin: 0; font-size: 22px; font-weight: bold; color: #191919; line-height: 1.3;">
+                            Comment devenir le choix n°1 des IA ?
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding: 10px 0 20px;">
+                        <div style="width: 48px; height: 3px; background-color: #50852b; margin: 0 auto;"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 0px 40px 28px;">
+                        <p style="margin: 0; font-size: 15px; color: #191919; line-height: 22px; text-align: center;">
+                            Aujourd'hui, le consommateur ne veut plus choisir entre fin de mois et fin du monde. Il cherche la performance tarifaire sans sacrifier son impact carbone. Face à cette double exigence, l'IA est devenue son conseiller privilégié pour comparer le 'vrai' prix de l'énergie verte.
+                        </p>
+                    </td>
+                </tr>
+                
+                <!-- Encadré Le saviez-vous -->
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 0px 40px 28px;">
+                        <!--[if gte mso 9]>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 2px solid #50852b; background-color: #f9fdf6;"><tr><td style="padding: 20px 24px;">
+                        <![endif]-->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 2px solid #50852b; border-radius: 6px; background-color: #f9fdf6;">
+                            <tr>
+                                <td style="padding: 20px 24px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td valign="top" width="36" style="padding-right: 12px; font-size: 24px; line-height: 1;">💡</td>
+                                            <td valign="top">
+                                                <p style="margin: 0 0 8px 0; font-size: 12px; font-weight: bold; color: #50852b; text-transform: uppercase; letter-spacing: 0.5px;">Le saviez-vous ?</p>
+                                                <p style="margin: 0; font-size: 15px; color: #191919; line-height: 21px;">
+                                                    <strong>1/4 des Français utilisent déjà les IA génératives chaque jour*.</strong> Les interroger avant de choisir un fournisseur est devenu un réflexe de plus en plus systématique.<br>
+                                                    <span style="font-size: 10px; color: #666666;">*Source : Eskimoz - observatoire des usages de la recherche en ligne en France 2026</span>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--[if gte mso 9]></td></tr></table><![endif]-->
+                    </td>
+                </tr>
+
+                <!-- Étape 1 -->
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 0px 40px 0px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td valign="top" width="36" align="center" style="padding-right: 16px;">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td align="center" valign="middle" width="36" height="36" style="width: 36px; height: 36px; background-color: #50852b; border-radius: 18px; color: #ffffff; font-size: 15px; font-weight: bold; text-align: center;">1</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="padding: 4px 0;">
+                                                <div style="width: 2px; height: 30px; background-color: #c5e0ae; margin: 0 auto;"></div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td valign="top" style="padding-top: 6px; padding-bottom: 20px;">
+                                    <p style="margin: 0; font-size: 15px; color: #191919; line-height: 22px;">Pour que ces IA recommandent votre marque, elles doivent puiser leurs informations dans des <strong>médias de confiance</strong>.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Étape 2 -->
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 0px 40px 28px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td valign="top" width="36" align="center" style="padding-right: 16px;">
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td align="center" valign="middle" width="36" height="36" style="width: 36px; height: 36px; background-color: #50852b; border-radius: 18px; color: #ffffff; font-size: 15px; font-weight: bold; text-align: center;">2</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td valign="top" style="padding-top: 6px;">
+                                    <p style="margin: 0; font-size: 15px; color: #191919; line-height: 22px;">En associant vos offres à l'autorité des marques Prisma Media, vous donnez aux IA les preuves de votre compétitivité prix et de votre transparence écologique. Nous transformons vos engagements (panneaux solaires, mix énergétique) en données de confiance pour les algorithmes.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Bloc Résultat -->
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 0px 40px 40px;">
+                        <!--[if gte mso 9]>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #50852b;"><tr><td align="center" style="padding: 20px 24px;">
+                        <![endif]-->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #50852b; border-radius: 6px;">
+                            <tr>
+                                <td align="center" style="padding: 20px 24px;">
+                                    <p style="margin: 0 0 8px 0; font-size: 12px; font-weight: bold; color: #c5e0ae; text-transform: uppercase; letter-spacing: 1px;">Résultat</p>
+                                    <p style="margin: 0; font-size: 15px; font-weight: bold; color: #ffffff; line-height: 21px; text-align: center;">Les leaders de demain seront les marques citées et recommandées au cœur des réponses des IA.</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--[if gte mso 9]></td></tr></table><![endif]-->
+                    </td>
+                </tr>
+            </table>
+
+            <!-- SECTION INTRO LLM -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F7F7F8" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #f7f7f8;">
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 20px 35px 0px; text-align: center;">
+                        <p style="margin: 0; font-size: 18px; font-weight: bold; color: #50852b;">----------- Content for LLM by -----------</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 20px 35px 20px;">
+                        <img src="https://www.prismamedia.com/app/uploads/2026/05/logos-marques-transition-energetique.jpg" alt="Logos marques transition énergétique" class="fluid-img" style="display: block; max-width: 520px; width: 100%; height: auto; margin: 0 auto; border: 0;">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" class="mobile-padding" style="padding: 0px 35px 20px; text-align: center;">
+                        <p style="margin: 0; font-size: 15px; color: #191919; line-height: 22px;">
+                            L'offre qui aide les annonceurs à ancrer leur marque dans les contenus les plus consultés et les plus cités par les IA génératives, en s'appuyant sur la puissance de marques leaders.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- TITRE METHODE -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F7F7F8" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #f7f7f8;">
+                <tr>
+                    <td align="center" style="padding: 10px 10px 15px; text-align: center;">
+                        <p style="margin: 0; font-size: 18px; font-weight: bold; color: #50852b;">---------- Une méthode en 3 étapes ----------</p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- ETAPES (3 COLONNES RESPO) -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F7F7F8" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #f7f7f8;">
+                <tr>
+                    <td align="center" style="padding: 0px 10px 30px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                            <tr>
+                                <!-- Colonne 1 -->
+                                <td align="center" valign="top" width="33.33%" class="cfllm-steps-col" style="padding: 0 10px;">
+                                    <img src="https://www.prismamedia.com/app/uploads/2026/05/analyser.png" width="60" style="display: block; width: 60px; height: auto; margin: 0 auto;" alt="Analyser">
+                                    <p style="margin: 10px 0 5px; font-weight: bold; font-size: 15px; color: #191919;">Analyser</p>
+                                    <p style="margin: 0; font-size: 13px; color: #191919; line-height: 18px;">Découvrez où votre marque se positionne dans les IA génératives.</p>
+                                </td>
+                                <!-- Colonne 2 -->
+                                <td align="center" valign="top" width="33.33%" class="cfllm-steps-col" style="padding: 0 10px;">
+                                    <img src="https://www.prismamedia.com/app/uploads/2026/05/activer.png" width="60" style="display: block; width: 60px; height: auto; margin: 0 auto;" alt="Activer">
+                                    <p style="margin: 10px 0 5px; font-weight: bold; font-size: 15px; color: #191919;">Activer</p>
+                                    <p style="margin: 0; font-size: 13px; color: #191919; line-height: 18px;">Faites émerger votre marque dans les environnements conversationnels.</p>
+                                </td>
+                                <!-- Colonne 3 -->
+                                <td align="center" valign="top" width="33.33%" class="cfllm-steps-col" style="padding: 0 10px;">
+                                    <img src="https://www.prismamedia.com/app/uploads/2026/05/piloter.png" width="60" style="display: block; width: 60px; height: auto; margin: 0 auto;" alt="Piloter">
+                                    <p style="margin: 10px 0 5px; font-weight: bold; font-size: 15px; color: #191919;">Piloter</p>
+                                    <p style="margin: 0; font-size: 13px; color: #191919; line-height: 18px;">Suivez, mesurez et consolidez votre empreinte afin d'avoir une longueur d'avance.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- BANNIERE VERTE CTA -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#50852b" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #50852b;">
+                <tr>
+                    <td align="center" style="padding: 15px 10px; text-align: center;">
+                        <p style="margin: 0; font-size: 16px; color: #ffffff; font-weight: bold;">Ne laissez pas la conversation se faire sans vous !</p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- BOUTON CTA -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F7F7F8" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #f7f7f8;">
+                <tr>
+                    <td align="center" style="padding: 40px 10px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td align="center" bgcolor="#50852b" style="border-radius: 5px; padding: 12px 30px;">
+                                    <a href="https://www.prismamedia.com/prismamediasolutions/actualites/prisma-media-solutions-innove-avec-content-for-llm-loffre-qui-optimise-et-mesure-votre-visibilite-dans-les-reponses-ia/" target="_blank" style="color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; display: inline-block;">Je découvre l'offre</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- FOOTER QUESTION -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#000000" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #000000;">
+                <tr>
+                    <td align="center" style="padding: 30px 10px; text-align: center; color: #ffffff;">
+                        <p style="margin: 0 0 5px 0; font-size: 14px;">Vous avez des questions ?</p>
+                        <a href="mailto:antoinelesieux@gmail.com" style="color: #ffffff; text-decoration: underline; font-size: 14px;">antoinelesieux@gmail.com</a>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- FOOTER LOGO -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" role="presentation" style="max-width: 600px; width: 600px;">
+                <tr>
+                    <td align="center" style="padding: 20px 10px;">
+                        <a href="https://www.prismamedia.com/prismamediasolutions/actualites/prisma-media-solutions-innove-avec-content-for-llm-loffre-qui-optimise-et-mesure-votre-visibilite-dans-les-reponses-ia/" target="_blank">
+                            <img src="https://www.prismamedia.com/app/uploads/2024/01/logo-prisma-media-solutions-emailing.png" width="120" alt="Logo Prisma Media Solutions" style="display: block; width: 120px; max-width: 120px; height: auto; border: 0;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html></script>
+<script type="text/plain" id="email-html-4"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40 ans de télévision. Votre marque au cœur d'une soirée exceptionnelle.</title>
+    <!--[if gte mso 9]>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+    <style type="text/css">
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #EEEFF1; }
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; -ms-interpolation-mode: bicubic; }
+        
+        /* Adaptaions Mobile */
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 100% !important;
+            }
+            .fluid-img {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            .pad-mobile {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            .offre-col {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box;
+                border-right: none !important;
+                border-bottom: 1px solid rgba(255,255,255,0.15) !important;
+                padding: 20px 10px !important;
+            }
+            .offre-col-last {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box;
+                padding: 20px 10px !important;
+            }
+            .pastille-cell {
+                display: inline-block !important;
+                padding: 4px 2px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #EEEFF1; font-family: Verdana, Geneva, sans-serif;">
+
+<!-- Preheader cach&eacute; -->
+<div style="display: none; max-height: 0px; overflow: hidden; font-size: 1px; line-height: 1px; color: #EEEFF1;">
+    Le 29 septembre, Télé-Loisirs, 1ère marque média entertainment, célèbre ses 40 ans avec une cérémonie exceptionnelle...
+</div>
+
+<!-- CONTENEUR GLOBAL -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#EEEFF1" role="presentation">
+    <tr>
+        <td align="center">
+            
+            <!-- LOGO HEADER -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" role="presentation" style="max-width: 600px; width: 600px;">
+                <tr>
+                    <td align="center" style="padding: 12px 10px 24px;">
+                        <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank">
+                            <img src="https://www.prismamedia.com/app/uploads/2024/01/logo-prisma-media-solutions-emailing.png" width="180" alt="Logo Prisma Media Solutions" style="display: block; width: 180px; max-width: 180px; height: auto;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- BANNIÈRE PRINCIPALE -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
+                <tr>
+                    <td align="center" valign="top">
+                        <img src="https://www.prismamedia.com//app/uploads/2026/07/header-tv.jpg" width="600" class="fluid-img" alt="40 ans de Télé-Loisirs" style="display: block; width: 100%; max-width: 600px; height: auto;">
+                    </td>
+                </tr>
+            </table>
+
+            <!-- SECTION INTROD / ÉVÉNEMENT -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
+                <tr>
+                    <td align="center" valign="top" class="pad-mobile" style="padding: 40px 50px 36px;">
+                        <img src="https://www.prismamedia.com//app/uploads/2026/07/logo-tele-loisirs.png" width="180" alt="Télé-Loisirs" style="display: block; width: 180px; max-width: 180px; margin: 0 auto 20px;">
+                        
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto 24px;" role="presentation">
+                            <tr>
+                                <td bgcolor="#E8192C" style="background: #e8192c; padding: 6px 16px; font-size: 14px; font-weight: bold; color: #ffffff; letter-spacing: 1.5px; text-transform: uppercase; text-align: center;">
+                                    Événement exceptionnel
+                                </td>
+                            </tr>
+                        </table>
+
+                        <p style="margin: 0; font-size: 15px; color: #1A1A1A; line-height: 1.7; text-align: center;">
+                            Le 29 septembre, <strong>Télé-Loisirs</strong>, 1ère marque média entertainment, célèbre ses 40 ans avec une cérémonie exceptionnelle qui récompense le meilleur des 4 dernières décennies du petit écran.
+                        </p>
+
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 26px auto 0;" role="presentation">
+                            <tr>
+                                <td align="center" style="border: 1px solid #0a0a0a; padding: 12px 30px;">
+                                    <span style="color: #0a0a0a; font-weight: bold; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;">Découvrir le dispositif</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- BANDEAU ROUGE TITRE -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#E8192C" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #e8192c;">
+                <tr>
+                    <td align="center" valign="top" style="padding: 22px 20px;">
+                        <p style="margin: 0; font-size: 16px; font-weight: bold; color: #FFFFFF; text-transform: uppercase; letter-spacing: 2px; text-align: center;">
+                            Un rendez-vous festif et fédérateur
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- LISTE DES INFORMATIONS (DATE, DIFFUSION, etc.) -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
+                
+                <!-- Date & Lieu -->
+                <tr>
+                    <td align="left" valign="middle" class="pad-mobile" style="padding: 18px 30px; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                            <tr>
+                                <td valign="middle" width="36" style="padding-right: 12px; font-size: 20px; line-height: 1;">📅</td>
+                                <td valign="middle">
+                                    <p style="margin: 0; font-size: 11px; color: #e8192c; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Date &amp; Lieu</p>
+                                    <p style="margin: 3px 0 0; font-size: 13px; color: #1a1a1a; font-weight: bold; line-height: 1.4;">29 septembre 2026 — Casino de Paris</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Diffusion -->
+                <tr>
+                    <td align="left" valign="middle" class="pad-mobile" style="padding: 18px 30px; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                            <tr>
+                                <td valign="middle" width="36" style="padding-right: 12px; font-size: 20px; line-height: 1;">📺</td>
+                                <td valign="middle">
+                                    <p style="margin: 0; font-size: 11px; color: #e8192c; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Diffusion</p>
+                                    <p style="margin: 3px 0 0; font-size: 13px; color: #1a1a1a; font-weight: bold; line-height: 1.4;">En direct en prime time en simultané sur CSTAR &amp; sur le site Télé-Loisirs</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Palmarès -->
+                <tr>
+                    <td align="left" valign="middle" class="pad-mobile" style="padding: 18px 30px; border-bottom: 1px solid rgba(0,0,0,0.08);">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                            <tr>
+                                <td valign="middle" width="36" style="padding-right: 12px; font-size: 20px; line-height: 1;">🏆</td>
+                                <td valign="middle">
+                                    <p style="margin: 0; font-size: 11px; color: #e8192c; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Palmarès</p>
+                                    <p style="margin: 3px 0 0; font-size: 13px; color: #1a1a1a; font-weight: bold; line-height: 1.4;">12 lauréats désignés par les Français</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- Souvenirs -->
+                <tr>
+                    <td align="left" valign="middle" class="pad-mobile" style="padding: 18px 30px 22px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
+                            <tr>
+                                <td valign="middle" width="36" style="padding-right: 12px; font-size: 20px; line-height: 1;">🎬</td>
+                                <td valign="middle">
+                                    <p style="margin: 0; font-size: 11px; color: #e8192c; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Souvenirs TV</p>
+                                    <p style="margin: 3px 0 0; font-size: 13px; color: #1a1a1a; font-weight: bold; line-height: 1.4;">Retour sur des moments de TV cultes</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- BLOC NOIR CONTEXTE & PASTILLES -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#0A0A0A" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #0a0a0a;">
+                <tr>
+                    <td align="center" valign="top" class="pad-mobile" style="padding: 40px 40px 0;">
+                        <p style="margin: 0; font-size: 22px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-align: center; line-height: 1.3;">FAITES BRILLER VOTRE MARQUE</p>
+                        <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold; color: #e8192c; letter-spacing: 2px; text-transform: uppercase; text-align: center;">— Au cœur de cet événement —</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top" class="pad-mobile" style="padding: 28px 20px 0;">
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" role="presentation">
+                            <tr>
+                                <td align="center" style="text-align: center;">
+                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
+                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">TV</span>
+                                    </span>
+                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
+                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Digital</span>
+                                    </span>
+                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
+                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Print</span>
+                                    </span>
+                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
+                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Social</span>
+                                    </span>
+                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
+                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Event</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top" class="pad-mobile" style="padding: 26px 40px 40px;">
+                        <p style="margin: 0; font-size: 14px; color: #ffffff; line-height: 1.7; text-align: center;">
+                            Une visibilité avant, pendant et après la cérémonie<br>au sein de l'écosystème Télé-Loisirs
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- OFFRE & TARIF (GRILLE RESPO 3 COLONNES) -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
+                <tr>
+                    <td align="center" valign="top" style="padding: 34px 20px 10px;">
+                        <table border="0" cellpadding="0" cellspacing="0" align="center" role="presentation">
+                            <tr>
+                                <td bgcolor="#E8192C" style="background: #e8192c; padding: 6px 16px; font-size: 14px; font-weight: bold; color: #ffffff; letter-spacing: 1.5px; text-transform: uppercase; text-align: center;">
+                                    Une opportunité unique
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+                <!-- BLOC OFFRE INTERNE -->
+                <tr>
+                    <td align="center" valign="top" class="pad-mobile" style="padding: 20px 30px 10px;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#0A0A0A" style="background-color: #0a0a0a;" role="presentation">
+                            <tr>
+                                <!-- Colonne 1 -->
+                                <td align="center" valign="middle" width="33.33%" class="offre-col" style="padding: 25px 10px; border-right: 1px solid rgba(255,255,255,0.15);">
+                                    <p style="margin: 0; font-size: 14px; font-weight: bold; color: #ffffff; line-height: 1.4; text-transform: uppercase; letter-spacing: 1px; text-align: center;">Partenariat<br>exclusif</p>
+                                </td>
+                                <!-- Colonne 2 -->
+                                <td align="center" valign="middle" width="33.33%" class="offre-col" style="padding: 25px 10px; border-right: 1px solid rgba(255,255,255,0.15);">
+                                    <p style="margin: 0 0 6px 0; font-size: 11px; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; text-align: center; font-weight: bold;">Contacts</p>
+                                    <p style="margin: 0; font-size: 32px; font-weight: bold; color: #e8192c; line-height: 1.1; text-align: center;">17M</p>
+                                </td>
+                                <!-- Colonne 3 -->
+                                <td align="center" valign="middle" width="33.33%" class="offre-col-last" style="padding: 25px 10px;">
+                                    <p style="margin: 0 0 6px 0; font-size: 11px; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; text-align: center; font-weight: bold;">Budget</p>
+                                    <p style="margin: 0; font-size: 32px; font-weight: bold; color: #e8192c; line-height: 1.1; text-align: center;">45K€ <span style="font-size: 13px; color: #ffffff; font-weight: bold; text-transform: lowercase;">net</span></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <!-- CTA BOUTON -->
+                <tr>
+                    <td align="center" valign="middle" style="padding: 25px 10px 40px;">
+                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                                <td align="center" bgcolor="#0A0A0A" style="background-color: #0a0a0a; padding: 15px 40px;">
+                                    <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">Je découvre l'offre</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- FOOTER NOIR CONTACT -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#0A0A0A" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #0a0a0a;">
+                <tr>
+                    <td align="center" valign="top" style="padding: 35px 20px;">
+                        <p style="margin: 0 0 16px 0; font-size: 13px; color: #ffffff; text-align: center; line-height: 22px;">
+                            Contacts : <a href="mailto:antoinelesieux@gmail.com" style="color: #ffffff; text-decoration: underline; font-weight: bold;">Antoine Lesieux</a>
+                        </p>
+                        <p style="margin: 0; font-size: 11px; color: #888888; line-height: 18px; text-align: center;">
+                            Si vous ne souhaitez plus recevoir nos emails, cliquez ici.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- LOGO FOOTER -->
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" role="presentation" style="max-width: 600px; width: 600px;">
+                <tr>
+                    <td align="center" style="padding: 20px 10px;">
+                        <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank">
+                            <img src="https://www.prismamedia.com/app/uploads/2024/01/logo-prisma-media-solutions-emailing.png" width="120" alt="Logo Prisma Media Solutions" style="display: block; width: 120px; max-width: 120px; height: auto;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html></script>
+<script type="text/plain" id="email-html-5"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="fr" xml:lang="fr">
+<head>
+<!--[if mso]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Harper's Bazaar Homme, en kiosque le 30 octobre 2025</title>
+<style type="text/css">
+body{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;color:#000000;margin:0 auto}
+td{line-height:100%}
+img{outline:0;text-decoration:none;-ms-interpolation-mode:bicubic;border:0;display:block}
+table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0}
+a{color:inherit;text-decoration:none;mso-line-height-rule:exactly}
+@media screen and (max-width:640px){
+  .m_w100p{width:100% !important}
+  .m_pr20px{padding-right:20px !important}
+  .m_pl20px{padding-left:20px !important}
+  .m_fz22px{font-size:22px !important}
+  .m_lh26px{line-height:26px !important}
+  .fluid-img{width:100% !important;height:auto !important;max-width:100% !important}
+  .m_pad24{padding-left:24px !important;padding-right:24px !important}
+  .m_pad16{padding-left:16px !important;padding-right:16px !important}
+  .m_fz28{font-size:22px !important;line-height:26px !important}
+  .m_stat-num{font-size:26px !important;line-height:28px !important}
+  .m_stat-label{font-size:9px !important;letter-spacing:1px !important}
+  .m_logo{width:200px !important}
+}
+</style>
+</head>
+<body style="background-color:#fffbf8;margin:0;padding:0;">
+
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
+Une nouvelle page s'ouvre. Harper's Bazaar Homme, en kiosque le 30 octobre 2025.
+&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;
+</div>
+
+<center style="width:100%;background-color:#fffbf8;">
+<!--[if mso]>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="620" align="center"><tr><td>
+<![endif]-->
+<table role="presentation" width="620" cellpadding="0" cellspacing="0" border="0" align="center" class="m_w100p" style="width:620px;max-width:620px;background-color:#fffbf8;">
+
+  <!-- BANDEAU NOIR AVEC LOGO -->
+  <tr>
+    <td align="center" style="background-color:#000000;padding:34px 20px;">
+      <img src="https://www.prismamedia.com/app/uploads/2026/07/LOGO_HBZ_HOMME-1.png" width="280" alt="Harper's Bazaar Homme" class="m_logo" style="width:280px;max-width:280px;height:auto;margin:auto;filter:brightness(0) invert(1);-webkit-filter:brightness(0) invert(1);">
+    </td>
+  </tr>
+
+  <!-- TITRE -->
+  <tr>
+    <td align="center" class="m_pr20px m_pl20px m_fz28" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;text-align:center;font-size:26px;line-height:30px;padding:30px 10px 22px 10px;">
+      UNE NOUVELLE PAGE S'OUVRE
+    </td>
+  </tr>
+  <tr>
+    <td style="border-bottom:2px solid #000000;font-size:2px;line-height:2px;">&nbsp;</td>
+  </tr>
+
+  <!-- HEADER PLEINE LARGEUR -->
+  <tr>
+    <td>
+      <img src="https://www.prismamedia.com/app/uploads/2026/07/hbz-homme.jpg" width="620" alt="Harper's Bazaar Homme" class="fluid-img" style="width:620px;max-width:620px;height:auto;">
+    </td>
+  </tr>
+
+  <!-- LETTRE -->
+  <tr>
+    <td class="m_pad24" style="padding:32px 50px 0 50px;">
+      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
+        Chères Amies, Chers Amis,
+      </p>
+      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
+        Une nouvelle page s'ouvre.
+      </p>
+      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
+        Deux ans après le lancement de Harper's Bazaar France, la France devient le premier pays au monde à faire naître Harper's Bazaar Homme.
+      </p>
+      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
+        Un magazine iconique, visionnaire, ancré dans la culture mode, au Masculin Pluriel. Une nouvelle voix masculine, libre, singulière, esthétique, qui explore les obsessions contemporaines et redéfinit la masculinité d'aujourd'hui. La mode y devient un langage.
+      </p>
+      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
+        Au fil de 244 pages : des images fortes, des entretiens sans filtre (Jonathan Anderson, Willy Chavarria, Théodore Pellerin…), des idées qui bousculent, des regards qui inspirent.
+      </p>
+      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
+        Beauté, sport, culture et style s'y rencontrent avec des rubriques signatures : l'irrésistible Bazaar Memo, l'incontournable Bazaar Opinion, et le subjectif Why Don't You…
+      </p>
+      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-style:italic;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0;text-align:left;">
+        Le tout avec audace et élégance.
+      </p>
+    </td>
+  </tr>
+
+  <!-- BLOC CHIFFRES CLES -->
+  <tr>
+    <td style="padding:34px 40px 0 40px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="border-top:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="m_pad16" style="padding:28px 40px 28px 40px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="center" width="33.33%" style="padding:0 6px;">
+            <p class="m_stat-num" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;font-size:34px;line-height:36px;margin:0;">244</p>
+            <p class="m_stat-label" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0 0;">Pages</p>
+          </td>
+          <td width="1" style="border-left:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td>
+          <td align="center" width="33.33%" style="padding:0 6px;">
+            <p class="m_stat-num" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;font-size:34px;line-height:36px;margin:0;">3</p>
+            <p class="m_stat-label" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0 0;">Rubriques signatures</p>
+          </td>
+          <td width="1" style="border-left:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td>
+          <td align="center" width="33.34%" style="padding:0 6px;">
+            <p class="m_stat-num" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;font-size:34px;line-height:36px;margin:0;">30 oct.</p>
+            <p class="m_stat-label" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0 0;">En kiosque</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 40px 0 40px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="border-top:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- CTA (encadre noir, sans lien) -->
+  <tr>
+    <td align="center" class="m_pad16" style="padding:44px 20px 34px 20px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+        <tr>
+          <td style="background-color:#000000;border-top:2px solid #000000;border-bottom:2px solid #000000;border-left:2px solid #000000;border-right:2px solid #000000;color:#ffffff;font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;font-size:18px;text-align:center;padding:12px 40px;">
+            EN KIOSQUE LE 30 OCTOBRE 2025
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- TEXTE DE CLOTURE -->
+  <tr>
+    <td align="center" class="m_pad24" style="padding:0 50px 40px 50px;">
+      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0;">
+        Une aventure éditoriale née en France, pensée pour rayonner dans le monde.<br>
+        Bienvenue dans l'univers de Harper's Bazaar Homme.
+      </p>
+    </td>
+  </tr>
+
+  <!-- LIGNE DE SEPARATION FOOTER -->
+  <tr>
+    <td style="padding:0 20px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr><td style="border-top:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- FOOTER : LOGO PRISMA MEDIA SOLUTIONS + CTA CONTACT -->
+  <tr>
+    <td style="padding:30px 20px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="left" valign="middle" width="50%">
+            <img src="https://www.prismamedia.com/app/uploads/2026/07/logo-prisma-media.png" width="150" alt="Prisma Media Solutions" style="width:150px;max-width:150px;height:auto;">
+          </td>
+          <td align="right" valign="middle" width="50%">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right">
+              <tr>
+                <td style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#ffffff;text-align:center;text-transform:uppercase;font-size:12px;background-color:#000000;line-height:20px;padding:8px 18px;">
+                  CONTACTEZ-NOUS
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- MENTIONS LEGALES -->
+  <tr>
+    <td align="center" class="m_pad24" style="padding:10px 40px 36px 40px;">
+      <p style="font-family:Helvetica,Arial,sans-serif;color:#000000;font-size:10px;line-height:15px;margin:0;">
+        Harper's Bazaar Homme 2026 © Tous droits réservés.
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!--[if mso]>
+</td></tr></table>
+<![endif]-->
+</center>
+
+</body>
+</html>
+</script>
+
+<script>
+(function(){
+  var previews = document.querySelectorAll('.email-preview');
+  previews.forEach(function(wrapper){
+    var id = wrapper.getAttribute('data-email-id');
+    var tpl = document.getElementById('email-html-' + id);
+    if(!tpl) return;
+    var html = tpl.textContent;
+    var iframe = wrapper.querySelector('iframe');
+
+    // Largeur "bureau" fixe, volontairement au-dessus de tous les seuils responsive
+    // habituels des emailings (480/620/640px), pour forcer le rendu desktop avant mise à l'échelle.
+    var DESKTOP_WIDTH = 700;
+    iframe.style.width = DESKTOP_WIDTH + 'px';
+    iframe.style.height = '1200px';
+
+    function applyScale(){
+      try{
+        var doc = iframe.contentDocument;
+        if(!doc || !doc.documentElement) return;
+        var naturalWidth = DESKTOP_WIDTH;
+        var naturalHeight = doc.documentElement.scrollHeight || 800;
+        var containerWidth = wrapper.clientWidth;
+        if(!containerWidth) return;
+        var scale = containerWidth / naturalWidth;
+        iframe.style.width = naturalWidth + 'px';
+        iframe.style.height = naturalHeight + 'px';
+        iframe.style.transform = 'scale(' + scale + ')';
+        iframe.style.transformOrigin = 'top left';
+        /* La vignette garde une hauteur fixe (voir CSS) : on affiche le haut de l'emailing, recadré */
+      } catch(e){ /* aperçu non disponible, on garde le cadre par défaut */ }
+    }
+
+    iframe.addEventListener('load', function(){
+      applyScale();
+      window.addEventListener('resize', applyScale);
+    });
+    iframe.srcdoc = html;
+
+    var openBtn = document.querySelector('[data-email-open="' + id + '"]');
+    if(openBtn){
+      openBtn.addEventListener('click', function(){
+        var blob = new Blob([html], { type: 'text/html' });
+        var url = URL.createObjectURL(blob);
+        window.open(url, '_blank', 'noopener');
+      });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
