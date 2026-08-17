@@ -550,6 +550,8 @@
     border:0;
     display:block;
     background:#ffffff;
+    width:100%;
+    height:100%;
   }
   .emailing-actions{
     padding:12px 16px;
@@ -604,11 +606,15 @@
     height:280px;
     overflow:hidden;
   }
-  .thumb-cropped img{
+  .thumb-cropped img,
+  .thumb-cropped canvas{
+    width:100%;
     height:100%;
     object-fit:cover;
     object-position:top;
     box-shadow:none;
+    display:block;
+    background:#ffffff;
   }
   .thumb-cropped::before{
     content:"";
@@ -949,7 +955,6 @@
           <p class="spread-kicker">01</p>
           <h2 id="digital-crm-title">Digital & CRM</h2>
         </div>
-        <p class="page-ref">Emailings et newsletter</p>
       </div>
       <p class="spread-desc">
         Conception et intégration de campagnes d'emailing B2B, du brief créatif au routage,
@@ -1097,11 +1102,10 @@
           <p class="spread-kicker">02</p>
           <h2 id="print-editorial-title">Print éditorial</h2>
         </div>
-        <p class="page-ref">Actualités commerciales et communications B2B</p>
       </div>
       <p class="spread-desc">
-        Actualités commerciales et communications B2B conçues pour les magazines
-        et supports annonceurs.
+        Création de supports print destinés à valoriser les marques, expertises et offres de Prisma
+        Media auprès des annonceurs et du marché publicitaire.
       </p>
       <div class="creation-subgroup">
         <div class="creation-subgroup-head">
@@ -1172,6 +1176,15 @@
             </button>
             <figcaption>Création d'une page consacrée à l'offre santé de Prisma Media, mettant en avant la puissance des audiences print et digitales et la complémentarité des marques du groupe.</figcaption>
           </figure>
+          <figure class="creation-card filled emailing-card">
+            <div class="email-preview">
+              <iframe class="email-frame" src="https://www.prismamedia.com//app/uploads/2026/08/Leaflet-etude-18-34-ans.pdf" title="Aperçu du leaflet — 18-34 ans" loading="lazy"></iframe>
+            </div>
+            <div class="emailing-actions">
+              <a class="btn btn-secondary btn-small" href="https://www.prismamedia.com//app/uploads/2026/08/Leaflet-etude-18-34-ans.pdf" target="_blank" rel="noopener">Ouvrir en plein écran ⤢</a>
+            </div>
+            <figcaption>Leaflet 18-34 ans — refonte</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -1185,10 +1198,11 @@
           <p class="spread-kicker">03</p>
           <h2 id="print-evenementiel-title">Print événementiel</h2>
         </div>
-        <p class="page-ref">Invitations & Carte de vœux</p>
       </div>
       <p class="spread-desc">
-        Créations pour temps forts et relations annonceurs : invitations et cartes de vœux.
+        Conception de créations pour les événements B2B de Prisma Media : invitations, cartes de
+        vœux, éléments de scénographie et trophées. Déclinaison des concepts visuels sur différents
+        supports, de la communication événementielle à la mise en scène des événements.
       </p>
       <div class="creation-subgroup">
         <div class="creation-subgroup-head">
@@ -1252,6 +1266,39 @@
               <img src="https://i.postimg.cc/Y91FBRxY/carte-de-voeux-2024.webp" alt="Carte de vœux 2024" loading="lazy" decoding="async">
             </button>
             <figcaption>Création d'une carte de vœux 2024 pour Prisma Media et Vivendi, autour d'un trait continu symbolisant l'élan et le renouveau.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="creation-subgroup">
+        <div class="creation-subgroup-head">
+          <span class="subnum">03</span>
+          <h3>Scénographie & Trophées</h3>
+        </div>
+        <div class="creation-grid">
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Dibond Ideat Design Awards — visuel 1">
+              <img src="https://www.image-heberg.fr/files/1786011210135226317.webp" alt="Dibond Ideat Design Awards — visuel 1" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Ideat Design Awards — création de dibonds</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Dibond Ideat Design Awards — visuel 2">
+              <img src="https://www.image-heberg.fr/files/17860112561827218389.webp" alt="Dibond Ideat Design Awards — visuel 2" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Ideat Design Awards — création de dibonds</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Dibond Ideat Design Awards — visuel 3">
+              <img src="https://www.image-heberg.fr/files/1786011280853643804.webp" alt="Dibond Ideat Design Awards — visuel 3" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Ideat Design Awards — création de dibonds</figcaption>
+          </figure>
+          <figure class="creation-card filled">
+            <button type="button" class="thumb" aria-label="Agrandir : Trophées Grand Prix Cuisine Actuelle">
+              <img src="https://www.image-heberg.fr/files/17860113403317079783.webp" alt="Trophées Grand Prix Cuisine Actuelle" loading="lazy" decoding="async">
+            </button>
+            <figcaption>Grand Prix Cuisine Actuelle — création des trophées</figcaption>
           </figure>
         </div>
       </div>
