@@ -39,6 +39,7 @@
     font-size:16px;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
 
   img{ max-width:100%; display:block; }
@@ -199,6 +200,7 @@
     text-decoration:none;
     border:1px solid transparent;
     transition:transform 0.15s ease, background 0.15s ease;
+    cursor:pointer;
   }
   .btn-primary{
     background:var(--menthe);
@@ -487,7 +489,6 @@
     color:var(--gris-brume-mute);
     border-top:1px solid var(--hairline);
   }
-  /* Quand un vrai visuel est ajouté (classe .filled), le style "nu" décrit dans le brief s'applique */
   .creation-card.filled{
     border:1px solid rgba(255,255,255,0.16);
   }
@@ -529,7 +530,6 @@
     opacity:1;
     transform:translateY(0);
   }
-
 
   .emailing-card .thumb{ display:none; }
   .email-preview{
@@ -671,14 +671,14 @@
     border-top:1px solid var(--hairline);
   }
   .lightbox-close{
-    position:fixed;
-    top:24px;
-    right:24px;
-    width:40px;
-    height:40px;
-    border-radius:8px;
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:36px;
+    height:36px;
+    border-radius:6px;
     border:1px solid rgba(255,255,255,0.25);
-    background:rgba(18,18,18,0.9);
+    background:rgba(18,18,18,0.85);
     color:var(--gris-brume);
     font-size:1.3rem;
     line-height:1;
@@ -773,6 +773,7 @@
     section{ padding:56px 0; }
     .sommaire-list a{ grid-template-columns:44px 1fr; }
     .sommaire-list .sommaire-arrow{ display:none; }
+    nav.primary-nav ul{ gap:12px; font-size:0.7rem; }
   }
 </style>
 </head>
@@ -1140,6 +1141,34 @@
           <h3>Communications print B2B</h3>
         </div>
         <div class="creation-grid">
+          <!-- Leaflet 18-34 ans : Miniature entière sur la grille -->
+          <figure class="creation-card filled" id="leaflet-card">
+            <button type="button" class="thumb" id="leaflet-thumb-main" aria-label="Agrandir et feuilleter : Leaflet étude 18-34 ans">
+              <img src="http://antoinelesieux.github.io/images/couverture-leaflet.webp" alt="Leaflet étude 18-34 ans — Couverture" loading="lazy" decoding="async">
+            </button>
+
+            <!-- Pages du leaflet intégrées à la Lightbox -->
+            <div class="leaflet-hidden-pages" style="display:none;">
+              <button type="button" class="thumb" aria-label="Feuilleter : Leaflet étude 18-34 ans — Page 1">
+                <img src="https://antoinelesieux.github.io/images/leaflet-18-34-ans-page-1.webp" alt="Leaflet étude 18-34 ans — Page 1" loading="lazy" decoding="async">
+              </button>
+              <button type="button" class="thumb" aria-label="Feuilleter : Leaflet étude 18-34 ans — Pages 2 et 3">
+                <img src="https://antoinelesieux.github.io/images/leaflet-18-34-ans-pages-2-3.webp" alt="Leaflet étude 18-34 ans — Pages 2-3" loading="lazy" decoding="async">
+              </button>
+              <button type="button" class="thumb" aria-label="Feuilleter : Leaflet étude 18-34 ans — Pages 4 et 5">
+                <img src="https://antoinelesieux.github.io/images/leaflet-18-34-ans-pages-4-5.webp" alt="Leaflet étude 18-34 ans — Pages 4-5" loading="lazy" decoding="async">
+              </button>
+              <button type="button" class="thumb" aria-label="Feuilleter : Leaflet étude 18-34 ans — Page 6">
+                <img src="https://antoinelesieux.github.io/images/leaflet-18-34-ans-page-4.webp" alt="Leaflet étude 18-34 ans — Page 6 (Dos)" loading="lazy" decoding="async">
+              </button>
+            </div>
+
+            <div class="emailing-actions">
+              <button type="button" class="btn btn-secondary btn-small" id="leaflet-btn-open">Voir le leaflet ⤢</button>
+            </div>
+            <figcaption>Conception graphique et mise en page d'un leaflet marketing dédié aux 18-34 ans. Hiérarchisation des insights et mise en forme des données.</figcaption>
+          </figure>
+
           <figure class="creation-card filled">
             <button type="button" class="thumb" aria-label="Agrandir : Communication print B2B — visuel 1">
               <img src="https://antoinelesieux.github.io/images/page-special-beaute-femme-actuelle.webp" alt="Communication print B2B — visuel 1" loading="lazy" decoding="async">
@@ -1169,21 +1198,6 @@
               <img src="https://antoinelesieux.github.io/images/page-pms-adtech.webp" alt="Communication print B2B — visuel 5" loading="lazy" decoding="async">
             </button>
             <figcaption>Création d'une page présentant l'offre PMS Adtech.</figcaption>
-          </figure>
-          <figure class="creation-card filled">
-            <button type="button" class="thumb" aria-label="Agrandir : Communication print B2B — visuel 6">
-              <img src="https://antoinelesieux.github.io/images/page-sante-prisma-media.webp" alt="Communication print B2B — visuel 6" loading="lazy" decoding="async">
-            </button>
-            <figcaption>Création d'une page consacrée à l'offre santé de Prisma Media, mettant en avant la puissance des audiences print et digitales et la complémentarité des marques du groupe.</figcaption>
-          </figure>
-          <figure class="creation-card filled">
-            <button type="button" class="thumb thumb-cropped" data-lightbox-max-width="600" aria-label="Agrandir : Leaflet 18-34 ans">
-              <img src="https://antoinelesieux.github.io/images/Leaflet-etude-18-34-ans.webp" alt="Couverture du leaflet — étude 18-34 ans" loading="lazy" decoding="async">
-            </button>
-            <div class="emailing-actions">
-              <a class="btn btn-secondary btn-small" href="https://www.prismamedia.com//app/uploads/2026/08/Leaflet-etude-18-34-ans.pdf" target="_blank" rel="noopener">Ouvrir le PDF complet ⤢</a>
-            </div>
-            <figcaption>Conception graphique et mise en page d'un leaflet marketing dédié aux 18-34 ans. Hiérarchisation des insights, mise en forme des données et création d'un support commercial clair et impactant.</figcaption>
           </figure>
         </div>
       </div>
@@ -1316,7 +1330,7 @@
         </p>
       </div>
       <div class="contact-ctas">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/antoine-lesieux-070943100/" target="_blank" rel="noopener">Échanger sur LinkedIn</a>
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/antoine-lesieux-070943100/" target="_blank" rel="noopener noreferrer">Échanger sur LinkedIn</a>
         <a class="btn btn-secondary" href="mailto:antoinelesieux@gmail.com">Contactez-moi</a>
       </div>
     </div>
@@ -1381,7 +1395,16 @@
 
   function openLightbox(trigger){
     lastFocused = trigger;
-    thumbs = Array.from(document.querySelectorAll('button.thumb'));
+
+    // Si on clique sur la miniature de la grille du leaflet, la modale commence directement sur la Page 1
+    if(trigger.id === 'leaflet-thumb-main'){
+      var page1 = document.querySelector('.leaflet-hidden-pages .thumb');
+      if(page1) trigger = page1;
+    }
+    
+    // Récupération globale de toutes les miniatures cliquables destinées à la Lightbox (en ignorant l'aperçu de grille)
+    thumbs = Array.from(document.querySelectorAll('.creation-card.filled .thumb:not(#leaflet-thumb-main):not([href])'));
+
     currentIndex = thumbs.indexOf(trigger);
     renderTrigger(trigger);
     updateNavVisibility();
@@ -1432,9 +1455,18 @@
     }
   }
 
-  document.querySelectorAll('.creation-card.filled .thumb').forEach(function(trigger){
+  document.querySelectorAll('.creation-card.filled .thumb:not([href])').forEach(function(trigger){
     trigger.addEventListener('click', function(){ openLightbox(trigger); });
   });
+
+  // Actionneur du bouton "Voir le leaflet"
+  var leafletBtn = document.getElementById('leaflet-btn-open');
+  var leafletThumbMain = document.getElementById('leaflet-thumb-main');
+  if(leafletBtn && leafletThumbMain){
+    leafletBtn.addEventListener('click', function(){
+      openLightbox(leafletThumbMain);
+    });
+  }
 
   prevBtn.addEventListener('click', showPrev);
   nextBtn.addEventListener('click', showNext);
@@ -2775,6 +2807,7 @@ Une nouvelle page s'ouvre. Harper's Bazaar Homme, en kiosque le 30 octobre 2025.
 <script>
 (function(){
   var previews = document.querySelectorAll('.email-preview');
+  
   previews.forEach(function(wrapper){
     var id = wrapper.getAttribute('data-email-id');
     var tpl = document.getElementById('email-html-' + id);
@@ -2782,8 +2815,6 @@ Une nouvelle page s'ouvre. Harper's Bazaar Homme, en kiosque le 30 octobre 2025.
     var html = tpl.textContent;
     var iframe = wrapper.querySelector('iframe');
 
-    // Largeur "bureau" fixe, volontairement au-dessus de tous les seuils responsive
-    // habituels des emailings (480/620/640px), pour forcer le rendu desktop avant mise à l'échelle.
     var DESKTOP_WIDTH = 700;
     iframe.style.width = DESKTOP_WIDTH + 'px';
     iframe.style.height = '1200px';
@@ -2801,14 +2832,20 @@ Une nouvelle page s'ouvre. Harper's Bazaar Homme, en kiosque le 30 octobre 2025.
         iframe.style.height = naturalHeight + 'px';
         iframe.style.transform = 'scale(' + scale + ')';
         iframe.style.transformOrigin = 'top left';
-        /* La vignette garde une hauteur fixe (voir CSS) : on affiche le haut de l'emailing, recadré */
-      } catch(e){ /* aperçu non disponible, on garde le cadre par défaut */ }
+      } catch(e){}
     }
 
     iframe.addEventListener('load', function(){
       applyScale();
-      window.addEventListener('resize', applyScale);
+      
+      if('ResizeObserver' in window){
+        var ro = new ResizeObserver(function(){ applyScale(); });
+        ro.observe(wrapper);
+      } else {
+        window.addEventListener('resize', applyScale);
+      }
     });
+    
     iframe.srcdoc = html;
 
     var openBtn = document.querySelector('[data-email-open="' + id + '"]');
@@ -2817,6 +2854,7 @@ Une nouvelle page s'ouvre. Harper's Bazaar Homme, en kiosque le 30 octobre 2025.
         var blob = new Blob([html], { type: 'text/html' });
         var url = URL.createObjectURL(blob);
         window.open(url, '_blank', 'noopener');
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 5000);
       });
     }
   });
