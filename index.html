@@ -14,6 +14,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Antoine Lesieux — Creative Designer Senior & Webdesigner Paris</title>
 <meta name="description" content="Portfolio d'Antoine Lesieux, Creative Designer & Webdesigner Senior (ex-Prisma Media). Expertise en emailing B2B, print éditorial, digital et IA générative.">
 
+<!-- Preload ressources critiques -->
+<link rel="preload" href="https://antoinelesieux.github.io/images/moi.webp" as="image">
+
 <!-- Canonical URL -->
 <link rel="canonical" href="https://antoinelesieux.github.io/">
 
@@ -841,7 +844,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="wrap">
       <div class="cover-main">
         <div class="cover-portrait">
-          <img src="https://antoinelesieux.github.io/images/moi.webp" alt="Portrait d'Antoine Lesieux" loading="lazy" decoding="async">
+          <img src="https://antoinelesieux.github.io/images/moi.webp" alt="Portrait d'Antoine Lesieux" decoding="async">
         </div>
         <div class="cover-kicker-row">
           <span>Creative Designer — Emailing · Print · Digital · IA</span>
@@ -1004,7 +1007,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
       <div class="creation-grid">
         <figure class="creation-card filled emailing-card">
-          <div class="email-preview" data-email-id="1">
+          <div class="email-preview" data-email-id="1" data-email-url="https://antoinelesieux.github.io/emailings/havard-business-review.html">
             <iframe class="email-frame" title="Aperçu de l'emailing — Harvard Business Review France — Été 2026" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="email-stats">
@@ -1025,8 +1028,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <figcaption>Harvard Business Review France — Emailing B2B, rentrée éditoriale</figcaption>
         </figure>
+
         <figure class="creation-card filled emailing-card">
-          <div class="email-preview" data-email-id="2">
+          <div class="email-preview" data-email-id="2" data-email-url="https://antoinelesieux.github.io/emailings/observatoire-sante.html">
             <iframe class="email-frame" title="Aperçu de l'emailing — Observatoire Santé — 5ème édition" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="email-stats">
@@ -1047,8 +1051,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <figcaption>Observatoire Santé — 5ème édition</figcaption>
         </figure>
+
         <figure class="creation-card filled emailing-card">
-          <div class="email-preview" data-email-id="3">
+          <div class="email-preview" data-email-id="3" data-email-url="https://antoinelesieux.github.io/emailings/transition-energetique.html">
             <iframe class="email-frame" title="Aperçu de l'emailing — Transition énergétique — Prisma Media Solutions" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="email-stats">
@@ -1069,8 +1074,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <figcaption>Offre commerciale Content for LLM</figcaption>
         </figure>
+
         <figure class="creation-card filled emailing-card">
-          <div class="email-preview" data-email-id="4">
+          <div class="email-preview" data-email-id="4" data-email-url="https://antoinelesieux.github.io/emailings/tele-loisrs.html">
             <iframe class="email-frame" title="Aperçu de l'emailing — Télé-Loisirs — 40 ans" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="email-stats">
@@ -1091,8 +1097,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <figcaption>Évènement : 40 ans de Télé-Loisirs</figcaption>
         </figure>
+
         <figure class="creation-card filled emailing-card">
-          <div class="email-preview" data-email-id="5">
+          <div class="email-preview" data-email-id="5" data-email-url="https://antoinelesieux.github.io/emailings/harpers-bazaar-homme.html">
             <iframe class="email-frame" title="Aperçu de l'emailing — Harper's Bazaar Homme" tabindex="-1" aria-hidden="true"></iframe>
           </div>
           <div class="email-stats">
@@ -1113,6 +1120,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <figcaption>Lancement du Harper's Bazaar Homme</figcaption>
         </figure>
+
         <figure class="creation-card filled">
           <button type="button" class="thumb thumb-cropped" data-lightbox-max-width="600" aria-label="Agrandir : Newsletter Prisma Media Solutions">
             <img src="https://antoinelesieux.github.io/images/newsletter-regie-pms.webp" alt="Newsletter de la régie publicitaire Prisma Media Solutions" loading="lazy" decoding="async">
@@ -1396,6 +1404,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 (function(){
+  // --- GESTION DE LA LIGHTBOX ---
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightbox-img');
   var lightboxCaption = document.getElementById('lightbox-caption');
@@ -1433,13 +1442,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function openLightbox(trigger){
     lastFocused = trigger;
 
-    // Si on clique sur la miniature de la grille du leaflet, la modale commence directement sur la Page 1
     if(trigger.id === 'leaflet-thumb-main'){
       var page1 = document.querySelector('.leaflet-hidden-pages .thumb');
       if(page1) trigger = page1;
     }
     
-    // Récupération globale de toutes les miniatures cliquables destinées à la Lightbox (en ignorant l'aperçu de grille)
     thumbs = Array.from(document.querySelectorAll('.creation-card.filled .thumb:not(#leaflet-thumb-main):not([href])'));
 
     currentIndex = thumbs.indexOf(trigger);
@@ -1496,7 +1503,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     trigger.addEventListener('click', function(){ openLightbox(trigger); });
   });
 
-  // Actionneur du bouton "Voir le leaflet"
   var leafletBtn = document.getElementById('leaflet-btn-open');
   var leafletThumbMain = document.getElementById('leaflet-thumb-main');
   if(leafletBtn && leafletThumbMain){
@@ -1511,1346 +1517,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   lightbox.querySelectorAll('[data-close]').forEach(function(el){
     el.addEventListener('click', closeLightbox);
   });
-})();
-</script>
 
-<script type="text/plain" id="email-html-1"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Harvard Business Review France - Été 2026 - V2</title>
-  <style type="text/css">
-    body, table, td { font-family: Arial, Helvetica, sans-serif; }
-    body { margin: 0; padding: 0; background-color: #eef0f4; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-    img { border: 0; outline: none; text-decoration: none; display: block; }
-    table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-    a { text-decoration: none; }
-    .wrapper { width: 100%; background-color: #eef0f4; }
-    .container { width: 600px; max-width: 600px; margin: 0 auto; background-color: #ffffff; }
-    @media only screen and (max-width: 620px) {
-      .container { width: 100% !important; }
-      .fluid-img { width: 100% !important; height: auto !important; }
-      .stack { display: block !important; width: 100% !important; box-sizing: border-box !important; padding: 10px 0 !important; }
-      .pad-mobile { padding-left: 20px !important; padding-right: 20px !important; }
-    }
-  </style>
-</head>
-<body style="margin:0; padding:0; background-color:#eef0f4;">
-  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
-    Harvard Business Review France, la source internationale de référence du monde des affaires, consolide ses positions sur la dernière vague de l'étude ONE Next Influence (2026).
-  </div>
-  <table role="presentation" class="wrapper" width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-      <td align="center" style="padding: 20px 10px; background-color:#eef0f4;">
-        <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;">
-          <tr>
-            <td align="center" style="background-color:#eef0f4; padding: 20px 20px 20px 20px;">
-              <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank" splio-link-id="2">
-                <img src="https://www.prismamedia.com/app/uploads/2026/07/LOGO_PRISMA_SOLUTIONS_RVB.png" alt="Prisma Media Solutions" width="160" style="display:block; border:0;">
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td align="center">
-              <a href="https://www.prismamedia.com/marques/harvard-business-review/" target="_blank" splio-link-id="3">
-                <img src="https://www.prismamedia.com/app/uploads/2026/07/header-hbr-7.jpg" alt="Connaissez-vous le titre le plus haut de gamme de toute la presse française ?" width="600" class="fluid-img" style="display:block; width:100%; height:auto; border:0;">
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td style="background-color:#14213d; padding: 35px 40px 30px 40px;" class="pad-mobile">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td align="center" style="padding-bottom: 18px;">
-                    <a href="https://www.hbrfrance.fr/" target="_blank" splio-link-id="4">
-                      <img src="https://www.prismamedia.com/app/uploads/2026/07/HBR-BLANC.png" alt="Harvard Business Review France" width="120" style="display:block; border:0;">
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="center" style="padding-bottom: 16px;">
-                    <p style="margin:0; font-size:21px; line-height:27px; color:#ffffff; font-weight:bold;">
-                      Connaissez-vous <span style="color:#e4003c;">le titre le plus haut de gamme</span><br />de toute la presse française ?
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="center">
-                    <p style="margin:0; font-size:14px; line-height:21px; color:#ffffff;">
-                      <strong>Harvard Business Review France, la source internationale de référence du monde des affaires, consolide ses positions sur la dernière vague de l'étude ONE Next Influence (2026).</strong>
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="background-color:#14213d; padding: 0 20px 35px 20px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td width="50%" valign="top" class="stack" style="padding: 0 6px;">
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #2a3a5c;">
-                      <tr>
-                        <td align="center" style="padding: 22px 10px 4px 10px;">
-                          <span style="font-size:38px; font-weight:bold; color:#e4003c; line-height:38px;">N°1</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center" style="padding: 0 10px 12px 10px;">
-                          <span style="font-size:13px; color:#ffffff;">sur les plus <strong>Hauts Décideurs</strong></span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center" style="padding: 12px 10px 22px 10px; border-top:1px solid #2a3a5c;">
-                          <span style="font-size:12px; color:#c7c9d1;">Indice <strong style="color:#ffffff;">365</strong> sur les Membres de Comex</span>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                  <td width="50%" valign="top" class="stack" style="padding: 0 6px;">
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #2a3a5c;">
-                      <tr>
-                        <td align="center" style="padding: 22px 10px 4px 10px;">
-                          <span style="font-size:38px; font-weight:bold; color:#e4003c; line-height:38px;">N°1</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center" style="padding: 0 10px 12px 10px;">
-                          <span style="font-size:13px; color:#ffffff;">sur les plus <strong>Hauts Revenus</strong></span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td align="center" style="padding: 12px 10px 22px 10px; border-top:1px solid #2a3a5c;">
-                          <span style="font-size:12px; color:#c7c9d1;">Indice <strong style="color:#ffffff;">325</strong> sur les Top1%</span>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="background-color:#14213d; padding: 5px 45px 10px 45px;" class="pad-mobile">
-              <p style="margin:0; font-size:17px; line-height:24px; color:#ffffff; font-style:italic;">
-                « Un lectorat au sommet des pouvoirs d'achat & de prescription »
-              </p>
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 14px auto 0 auto;">
-                <tr><td style="border-top:2px solid #e4003c; width:40px; font-size:0; line-height:0;"> </td></tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="background-color:#14213d; padding: 12px 40px 25px 40px;" class="pad-mobile">
-              <p style="margin:0; font-size:10px; line-height:15px; color:#ffffff;">
-                Source : dernière vague (2026) ACPM ONE Next Influence<br>
-                HBR France : n°1 en affinité parmi les 203 supports étudiés (30J)
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="background-color:#14213d; padding: 0 20px 40px 20px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td align="center" style="border:2px solid #ffffff; border-radius:2px;">
-                    <a href="https://www.prismamedia.com/marques/harvard-business-review/" target="_blank" style="display:inline-block; padding:13px 26px; font-size:13px; font-weight:bold; color:#ffffff; letter-spacing:0.5px;" splio-link-id="5">
-                      EN SAVOIR PLUS SUR HARVARD BUSINESS REVIEW FRANCE
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="background-color:#f7f7f9; padding: 40px 40px 15px 40px;" class="pad-mobile">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td align="center" style="padding-bottom: 5px;">
-                    <span style="color:#e4003c; font-size:12px; font-weight:bold; letter-spacing:1px;">CALENDRIER ÉDITORIAL</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="center">
-                    <span style="color:#1a1a2e; font-size:19px; font-weight:bold;">Des contenus de qualité pour les Top Influenceurs</span>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="background-color:#f7f7f9; padding: 0 40px 10px 40px;" class="pad-mobile">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td width="16" valign="top" align="center">
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                      <tr><td style="width:8px; height:8px; background-color:#e4003c; border-radius:4px; font-size:0; line-height:0;"> </td></tr>
-                      <tr><td width="1" height="50" style="background-color:#d8d9e0; font-size:0; line-height:0;"> </td></tr>
-                    </table>
-                  </td>
-                  <td width="14"> </td>
-                  <td valign="top" style="padding-bottom:25px;">
-                    <p style="margin:0; font-size:14px; line-height:20px; color:#1a1a2e;">
-                      Bimestriel <strong>Août-Septembre</strong> : Sujets RH, IA, Stratégie, Innovation…<br>
-                      <span style="font-size:12px; font-style:italic; color:#8a8f98;">Parution 12 août · Bouclage 20 juillet</span>
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="16" valign="top" align="center">
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                      <tr><td style="width:8px; height:8px; background-color:#e4003c; border-radius:4px; font-size:0; line-height:0;"> </td></tr>
-                      <tr><td width="1" height="50" style="background-color:#d8d9e0; font-size:0; line-height:0;"> </td></tr>
-                    </table>
-                  </td>
-                  <td width="14"> </td>
-                  <td valign="top" style="padding-bottom:25px;">
-                    <p style="margin:0; font-size:14px; line-height:20px; color:#1a1a2e;">
-                      Hors-Série <strong>Septembre-Octobre</strong> : Enjeux et perspectives de l'IA<br>
-                      <span style="font-size:12px; font-style:italic; color:#8a8f98;">Parution 9 septembre · Bouclage 18 août</span>
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="16" valign="top" align="center">
-                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                      <tr><td style="width:8px; height:8px; background-color:#e4003c; border-radius:4px; font-size:0; line-height:0;"> </td></tr>
-                    </table>
-                  </td>
-                  <td width="14"> </td>
-                  <td valign="top" style="padding-bottom:10px;">
-                    <p style="margin:0; font-size:14px; line-height:20px; color:#1a1a2e;">
-                      Bimestriel <strong>Octobre-Novembre</strong> : Sujets Data, Leadership, Management, Tech & IA…<br>
-                      <span style="font-size:12px; font-style:italic; color:#8a8f98;">Parution 7 octobre · Bouclage 14 septembre</span>
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="background-color:#f7f7f9; padding: 15px 40px 40px 40px;" class="pad-mobile">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td align="center" style="background-color:#e4003c; border-radius:2px;">
-                    <a href="mailto:antoinelesieux@gmail.com" target="_blank" style="display:block; padding:15px 20px; font-size:13px; font-weight:bold; color:#ffffff; letter-spacing:0.5px;" splio-link-id="6">
-                      JE SOUHAITE SAISIR CES OPPORTUNITÉS DE COMMUNICATION
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding: 35px 40px 30px 40px;" class="pad-mobile">
-              <p style="margin:0 0 20px 0; font-size:14px; font-weight:bold; letter-spacing:1px; color:#8a8f98;">CONTACTEZ-NOUS</p>
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
-                <tr>
-                  <td valign="middle" align="center">
-                    <p style="margin:0; font-size:16px; font-weight:bold; color:#1a1a2e;">Antoine Lesieux</p>
-                    <p style="margin:2px 0 0 0; font-size:14px;"><a href="mailto:antoinelesieux@gmail.com" style="color:#e4003c;" splio-link-id="8">antoinelesieux@gmail.com</a></p>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 40px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr><td style="border-top:1px solid #e5e5ea; font-size:0; line-height:0; height:1px;"> </td></tr>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding: 25px 20px 30px 20px;">
-              <a href="https://www.hbrfrance.fr/" target="_blank" splio-link-id="9">
-                <img src="https://www.prismamedia.com/app/uploads/2026/07/HBR-NOIR.png" alt="Harvard Business Review France" width="90" style="display:block; margin:0 auto 12px auto; border:0;">
-              </a>
-              <p style="margin:0; font-size:13px; font-style:italic; font-weight:bold; color:#1a1a2e;">
-                "Réfléchir et agir avec un temps d'avance"
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html></script>
-<script type="text/plain" id="email-html-2"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="fr">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Découvrez la 5ème édition de notre Observatoire Santé</title>
-    <!--[if gte mso 9]>
-    <xml>
-      <o:OfficeDocumentSettings>
-        <o:AllowPNG/>
-        <o:PixelsPerInch>96</o:PixelsPerInch>
-      </o:OfficeDocumentSettings>
-    </xml>
-    <![endif]-->
-    <style type="text/css">
-        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; }
-        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #F4F4F4; }
-        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; -ms-interpolation-mode: bicubic; }
-        
-        /* Media Queries Mobile */
-        @media screen and (max-width: 660px) {
-            .email-container {
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 100% !important;
-            }
-            .fluid-img {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-            }
-            .pad-mobile {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-            .mobile-button {
-                width: 100% !important;
-                max-width: 100% !important;
-                display: block !important;
-            }
-        }
-    </style>
-</head>
-<body style="margin: 0; padding: 0; background-color: #F4F4F4; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-
-<!-- Preheader caché -->
-<span style="display:none; font-size:1px; color:#f4f4f4; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
-    Découvrez comment les Français vivent la santé depuis 10 ans, grâce à notre étude barométrique exclusive.
-</span>
-
-<!-- TABLEAU GLOBAL -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F4F4F4" role="presentation">
-    <tr>
-        <td align="center">
-            
-            <!-- LOGO HEADER -->
-            <table border="0" cellpadding="0" cellspacing="0" width="660" class="email-container" role="presentation" style="max-width: 660px; width: 660px;">
-                <tr>
-                    <td align="center" style="padding: 40px 20px 24px;">
-                        <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank">
-                            <img src="https://brand-assets.mailchimp.com/01KKVF4ZTAFRDSJ1NM0FV6C48V.png" width="214" alt="Logo Prisma Media Solutions" style="display: block; width: 214px; max-width: 214px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- BANNIÈRE HEADER -->
-            <table border="0" cellpadding="0" cellspacing="0" width="660" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 660px; width: 660px; background-color: #ffffff;">
-                <tr>
-                    <td align="center" valign="top">
-                        <a href="https://www.prismamedia.com/app/uploads/2026/03/header-sante.jpg" target="_blank">
-                            <img src="https://mcusercontent.com/664dd918f9540e6fe0ee66a8d/images/902614cf-58f3-6c2b-b58f-9e56b5f668a3.jpg" width="660" class="fluid-img" alt="Observatoire Santé" style="display: block; width: 100%; max-width: 660px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- CONTENU PRINCIPAL -->
-            <table border="0" cellpadding="0" cellspacing="0" width="660" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 660px; width: 660px; background-color: #ffffff;">
-                
-                <!-- Titre -->
-                <tr>
-                    <td align="center" class="pad-mobile" style="padding: 30px 30px 15px;">
-                        <p style="margin: 0; font-size: 22px; font-weight: bold; color: #031e50; line-height: 1.3; text-align: center;">
-                            Prisma Media Solutions dévoile <br>
-                            "Santé : de prérogative à (pré)occupation", <br>
-                            la 5ème édition de son Observatoire Santé
-                        </p>
-                    </td>
-                </tr>
-
-                <!-- Chapeau -->
-                <tr>
-                    <td align="center" class="pad-mobile" style="padding: 0 30px 20px;">
-                        <p style="margin: 0; font-size: 15px; color: #031e50; line-height: 1.5; text-align: center;">
-                            Entre inquiétudes autour d’un système de santé toujours plus chahuté et implémentation toujours plus forte de ses préceptes dans le quotidien, <strong>découvrez comment les Français vivent la santé depuis 10 ans</strong>, grâce à notre étude barométrique exclusive.
-                        </p>
-                    </td>
-                </tr>
-
-                <!-- Encadré Bleu Nouveauté -->
-                <tr>
-                    <td align="center" class="pad-mobile" style="padding: 0 30px 25px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#E2F0F3" style="background-color: #e2f0f3; border-radius: 8px;" role="presentation">
-                            <tr>
-                                <td align="center" style="padding: 16px 20px;">
-                                    <p style="margin: 0; font-size: 15px; line-height: 1.5; text-align: center;">
-                                        <strong><span style="color: #01879a;">Nouveauté de l'édition 2026 : </span></strong>
-                                        <span style="color: #031e50;">un volet inédit sur la santé mentale, grande cause gouvernementale 2025 &amp; 2026.</span>
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <!-- Bouton RDV -->
-                <tr>
-                    <td align="center" class="pad-mobile" style="padding: 10px 30px 30px;">
-                        <!--[if mso]>
-                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="mailto:antoinelesieux@gmail.com?subject=Contactez-nous%20pour%20r%C3%A9server%20un%20RDV%20de%20pr%C3%A9sentation%20&body=" style="height:50px;v-text-anchor:middle;width:480px;" arcsize="0%" stroke="f" fillcolor="#038a9d">
-                          <center style="color:#ffffff;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;">Contactez-nous pour réserver un RDV de présentation →</center>
-                        </v:roundrect>
-                        <![endif]-->
-                        <!--[if !mso]><!-->
-                        <table border="0" cellpadding="0" cellspacing="0" role="presentation" class="mobile-button">
-                            <tr>
-                                <td align="center" bgcolor="#038a9d" style="background-color: #038a9d; padding: 16px 28px;">
-                                    <a href="mailto:antoinelesieux@gmail.com?subject=Contactez-nous%20pour%20r%C3%A9server%20un%20RDV%20de%20pr%C3%A9sentation%20&body=" target="_blank" style="color: #ffffff; text-decoration: none; font-size: 15px; font-weight: bold; display: inline-block;">
-                                        Contactez-nous pour réserver un RDV de présentation →
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                        <!--<![endif]-->
-                    </td>
-                </tr>
-
-                <!-- Infographie -->
-                <tr>
-                    <td align="center" class="pad-mobile" style="padding: 0 20px 10px;">
-                        <a href="https://www.prismamedia.com/app/uploads/2026/03/infographie-sante.jpg" target="_blank">
-                            <img src="https://mcusercontent.com/664dd918f9540e6fe0ee66a8d/images/8eaff1fc-bb46-87e6-d507-67d5b4e94595.jpg" width="520" class="fluid-img" alt="Infographie Observatoire Santé" style="display: block; width: 100%; max-width: 520px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-
-                <!-- Légende Source -->
-                <tr>
-                    <td align="center" class="pad-mobile" style="padding: 10px 30px 30px;">
-                        <p style="margin: 0; font-size: 12px; color: #666666; line-height: 1.4; text-align: center;">
-                            Source : 5ème édition de l'Observatoire Santé "Santé : de prérogative à préoccupation",<br>
-                            Prisma Media Solutions &amp; CSA, 2026, échantillon représentatif de 1002 Français de 15 ans et +
-                        </p>
-                    </td>
-                </tr>
-
-                <!-- SECTION CONTACT -->
-                <tr>
-                    <td align="center" class="pad-mobile" style="padding: 20px 30px 10px;">
-                        <h2 style="margin: 0; font-size: 22px; font-weight: bold; color: #000000; text-align: center;">Contactez-nous</h2>
-                    </td>
-                </tr>
-
-                <!-- Bloc Contact Unique (Antoine Lesieux) -->
-                <tr>
-                    <td align="center" class="pad-mobile" style="padding: 10px 30px 40px;">
-                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                                <td align="center">
-                                    <p style="margin: 0 0 6px 0; font-size: 16px; font-weight: bold; color: #000000;">Antoine Lesieux</p>
-                                    <p style="margin: 0; font-size: 15px;">
-                                        <a href="mailto:antoinelesieux@gmail.com" style="color: #038a9d; text-decoration: underline;">antoinelesieux@gmail.com</a>
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-            </table>
-
-            <!-- FOOTER RESEAUX SOCIAUX & MARQUES -->
-            <table border="0" cellpadding="0" cellspacing="0" width="660" bgcolor="#000000" class="email-container" role="presentation" style="max-width: 660px; width: 660px; background-color: #000000;">
-                <tr>
-                    <td align="center" style="padding: 25px 20px 15px;">
-                        <p style="margin: 0; font-size: 14px; color: #ffffff; line-height: 1.6; text-align: center;">
-                            Retrouvez Prisma Media sur les réseaux sociaux <br>
-                            <a href="http://linkedin.com/company/prisma-media" target="_blank" style="color: #ffffff; text-decoration: underline;">Linkedin</a> • 
-                            <a href="https://www.instagram.com/prismamedia/?hl=fr" target="_blank" style="color: #ffffff; text-decoration: underline;">Instagram</a> • 
-                            <a href="https://www.youtube.com/channel/UCiGwiv9aGeLuOzcxCvGPaQw" target="_blank" style="color: #ffffff; text-decoration: underline;">Youtube</a>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" style="padding: 0 20px 30px;">
-                        <!--[if mso]>
-                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.prismamedia.com/marques/" style="height:45px;v-text-anchor:middle;width:220px;" arcsize="0%" stroke="f" fillcolor="#ffffff">
-                          <center style="color:#000000;font-family:Helvetica,Arial,sans-serif;font-size:14px;">Découvrir nos marques</center>
-                        </v:roundrect>
-                        <![endif]-->
-                        <!--[if !mso]><!-->
-                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                                <td align="center" bgcolor="#FFFFFF" style="background-color: #ffffff; padding: 12px 24px;">
-                                    <a href="https://www.prismamedia.com/marques/" target="_blank" style="color: #000000; text-decoration: none; font-size: 14px; font-weight: normal; display: inline-block;">
-                                        Découvrir nos marques
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                        <!--<![endif]-->
-                    </td>
-                </tr>
-            </table>
-
-        </td>
-    </tr>
-</table>
-
-</body>
-</html></script>
-<script type="text/plain" id="email-html-3"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="fr">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prisma Media Solutions</title>
-    <!--[if gte mso 9]>
-    <xml>
-      <o:OfficeDocumentSettings>
-        <o:AllowPNG/>
-        <o:PixelsPerInch>96</o:PixelsPerInch>
-      </o:OfficeDocumentSettings>
-    </xml>
-    <![endif]-->
-    <style type="text/css">
-        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; }
-        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #ECEFF1; }
-        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
-        
-        /* Media Queries pour la réactivité */
-        @media screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 100% !important;
-            }
-            .fluid-img {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-            }
-            .mobile-padding {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-            .cfllm-steps-col {
-                display: block !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                box-sizing: border-box;
-                padding-bottom: 25px !important;
-            }
-        }
-    </style>
-</head>
-<body style="margin: 0; padding: 0; background-color: #ECEFF1; font-family: Arial, Helvetica, sans-serif;">
-
-<!-- Preheader cach&eacute; -->
-<span style="display:none; font-size:1px; color:#ffffff; max-height:0; overflow:hidden; opacity:0; mso-hide:all;">
-  Aujourd'hui, le consommateur ne veut plus choisir entre fin de mois et fin du monde...
-</span>
-
-<!-- TABLEAU GLOBAL -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ECEFF1" role="presentation">
-    <tr>
-        <td align="center">
-            
-            <!-- HEADER LOGO -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" role="presentation" style="max-width: 600px; width: 600px;">
-                <tr>
-                    <td align="center" style="padding: 25px 10px;">
-                        <a href="https://www.prismamedia.com/prismamediasolutions/actualites/prisma-media-solutions-innove-avec-content-for-llm-loffre-qui-optimise-et-mesure-votre-visibilite-dans-les-reponses-ia/" target="_blank">
-                            <img src="https://www.prismamedia.com/app/uploads/2024/01/logo-prisma-media-solutions-emailing.png" width="180" alt="Logo Prisma Media Solutions" style="display: block; width: 180px; max-width: 180px; height: auto; border: 0;">
-                        </a>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- IMAGE HEADER -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F5F5F7" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #F5F5F7;">
-                <tr>
-                    <td align="center" valign="top">
-                        <a href="https://www.prismamedia.com/prismamediasolutions/actualites/prisma-media-solutions-innove-avec-content-for-llm-loffre-qui-optimise-et-mesure-votre-visibilite-dans-les-reponses-ia/" target="_blank">
-                            <img src="https://www.prismamedia.com/app/uploads/2026/05/header-transition-energetique.jpg" width="600" class="fluid-img" alt="Quel fournisseur d'énergie verte offre le meilleur rapport qualité / prix ?" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0;">
-                        </a>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- BLOC INFOGRAPHIE -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 36px 40px 8px;">
-                        <p style="margin: 0 0 24px 0;">
-                            <span style="display: inline-block; background-color: #eaf3e2; border-radius: 4px; padding: 5px 14px; font-size: 14px; font-weight: bold; color: #50852b; letter-spacing: 1px; text-transform: uppercase;">Transition énergétique</span>
-                        </p>
-                        <p style="margin: 0; font-size: 22px; font-weight: bold; color: #191919; line-height: 1.3;">
-                            Comment devenir le choix n°1 des IA ?
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" style="padding: 10px 0 20px;">
-                        <div style="width: 48px; height: 3px; background-color: #50852b; margin: 0 auto;"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 0px 40px 28px;">
-                        <p style="margin: 0; font-size: 15px; color: #191919; line-height: 22px; text-align: center;">
-                            Aujourd'hui, le consommateur ne veut plus choisir entre fin de mois et fin du monde. Il cherche la performance tarifaire sans sacrifier son impact carbone. Face à cette double exigence, l'IA est devenue son conseiller privilégié pour comparer le 'vrai' prix de l'énergie verte.
-                        </p>
-                    </td>
-                </tr>
-                
-                <!-- Encadré Le saviez-vous -->
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 0px 40px 28px;">
-                        <!--[if gte mso 9]>
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 2px solid #50852b; background-color: #f9fdf6;"><tr><td style="padding: 20px 24px;">
-                        <![endif]-->
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border: 2px solid #50852b; border-radius: 6px; background-color: #f9fdf6;">
-                            <tr>
-                                <td style="padding: 20px 24px;">
-                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                        <tr>
-                                            <td valign="top" width="36" style="padding-right: 12px; font-size: 24px; line-height: 1;">💡</td>
-                                            <td valign="top">
-                                                <p style="margin: 0 0 8px 0; font-size: 12px; font-weight: bold; color: #50852b; text-transform: uppercase; letter-spacing: 0.5px;">Le saviez-vous ?</p>
-                                                <p style="margin: 0; font-size: 15px; color: #191919; line-height: 21px;">
-                                                    <strong>1/4 des Français utilisent déjà les IA génératives chaque jour*.</strong> Les interroger avant de choisir un fournisseur est devenu un réflexe de plus en plus systématique.<br>
-                                                    <span style="font-size: 10px; color: #666666;">*Source : Eskimoz - observatoire des usages de la recherche en ligne en France 2026</span>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                        <!--[if gte mso 9]></td></tr></table><![endif]-->
-                    </td>
-                </tr>
-
-                <!-- Étape 1 -->
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 0px 40px 0px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <td valign="top" width="36" align="center" style="padding-right: 16px;">
-                                    <table border="0" cellpadding="0" cellspacing="0">
-                                        <tr>
-                                            <td align="center" valign="middle" width="36" height="36" style="width: 36px; height: 36px; background-color: #50852b; border-radius: 18px; color: #ffffff; font-size: 15px; font-weight: bold; text-align: center;">1</td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center" style="padding: 4px 0;">
-                                                <div style="width: 2px; height: 30px; background-color: #c5e0ae; margin: 0 auto;"></div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td valign="top" style="padding-top: 6px; padding-bottom: 20px;">
-                                    <p style="margin: 0; font-size: 15px; color: #191919; line-height: 22px;">Pour que ces IA recommandent votre marque, elles doivent puiser leurs informations dans des <strong>médias de confiance</strong>.</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <!-- Étape 2 -->
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 0px 40px 28px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                            <tr>
-                                <td valign="top" width="36" align="center" style="padding-right: 16px;">
-                                    <table border="0" cellpadding="0" cellspacing="0">
-                                        <tr>
-                                            <td align="center" valign="middle" width="36" height="36" style="width: 36px; height: 36px; background-color: #50852b; border-radius: 18px; color: #ffffff; font-size: 15px; font-weight: bold; text-align: center;">2</td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td valign="top" style="padding-top: 6px;">
-                                    <p style="margin: 0; font-size: 15px; color: #191919; line-height: 22px;">En associant vos offres à l'autorité des marques Prisma Media, vous donnez aux IA les preuves de votre compétitivité prix et de votre transparence écologique. Nous transformons vos engagements (panneaux solaires, mix énergétique) en données de confiance pour les algorithmes.</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <!-- Bloc Résultat -->
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 0px 40px 40px;">
-                        <!--[if gte mso 9]>
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #50852b;"><tr><td align="center" style="padding: 20px 24px;">
-                        <![endif]-->
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #50852b; border-radius: 6px;">
-                            <tr>
-                                <td align="center" style="padding: 20px 24px;">
-                                    <p style="margin: 0 0 8px 0; font-size: 12px; font-weight: bold; color: #c5e0ae; text-transform: uppercase; letter-spacing: 1px;">Résultat</p>
-                                    <p style="margin: 0; font-size: 15px; font-weight: bold; color: #ffffff; line-height: 21px; text-align: center;">Les leaders de demain seront les marques citées et recommandées au cœur des réponses des IA.</p>
-                                </td>
-                            </tr>
-                        </table>
-                        <!--[if gte mso 9]></td></tr></table><![endif]-->
-                    </td>
-                </tr>
-            </table>
-
-            <!-- SECTION INTRO LLM -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F7F7F8" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #f7f7f8;">
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 20px 35px 0px; text-align: center;">
-                        <p style="margin: 0; font-size: 18px; font-weight: bold; color: #50852b;">----------- Content for LLM by -----------</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 20px 35px 20px;">
-                        <img src="https://www.prismamedia.com/app/uploads/2026/05/logos-marques-transition-energetique.jpg" alt="Logos marques transition énergétique" class="fluid-img" style="display: block; max-width: 520px; width: 100%; height: auto; margin: 0 auto; border: 0;">
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" class="mobile-padding" style="padding: 0px 35px 20px; text-align: center;">
-                        <p style="margin: 0; font-size: 15px; color: #191919; line-height: 22px;">
-                            L'offre qui aide les annonceurs à ancrer leur marque dans les contenus les plus consultés et les plus cités par les IA génératives, en s'appuyant sur la puissance de marques leaders.
-                        </p>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- TITRE METHODE -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F7F7F8" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #f7f7f8;">
-                <tr>
-                    <td align="center" style="padding: 10px 10px 15px; text-align: center;">
-                        <p style="margin: 0; font-size: 18px; font-weight: bold; color: #50852b;">---------- Une méthode en 3 étapes ----------</p>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- ETAPES (3 COLONNES RESPO) -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F7F7F8" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #f7f7f8;">
-                <tr>
-                    <td align="center" style="padding: 0px 10px 30px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
-                            <tr>
-                                <!-- Colonne 1 -->
-                                <td align="center" valign="top" width="33.33%" class="cfllm-steps-col" style="padding: 0 10px;">
-                                    <img src="https://www.prismamedia.com/app/uploads/2026/05/analyser.png" width="60" style="display: block; width: 60px; height: auto; margin: 0 auto;" alt="Analyser">
-                                    <p style="margin: 10px 0 5px; font-weight: bold; font-size: 15px; color: #191919;">Analyser</p>
-                                    <p style="margin: 0; font-size: 13px; color: #191919; line-height: 18px;">Découvrez où votre marque se positionne dans les IA génératives.</p>
-                                </td>
-                                <!-- Colonne 2 -->
-                                <td align="center" valign="top" width="33.33%" class="cfllm-steps-col" style="padding: 0 10px;">
-                                    <img src="https://www.prismamedia.com/app/uploads/2026/05/activer.png" width="60" style="display: block; width: 60px; height: auto; margin: 0 auto;" alt="Activer">
-                                    <p style="margin: 10px 0 5px; font-weight: bold; font-size: 15px; color: #191919;">Activer</p>
-                                    <p style="margin: 0; font-size: 13px; color: #191919; line-height: 18px;">Faites émerger votre marque dans les environnements conversationnels.</p>
-                                </td>
-                                <!-- Colonne 3 -->
-                                <td align="center" valign="top" width="33.33%" class="cfllm-steps-col" style="padding: 0 10px;">
-                                    <img src="https://www.prismamedia.com/app/uploads/2026/05/piloter.png" width="60" style="display: block; width: 60px; height: auto; margin: 0 auto;" alt="Piloter">
-                                    <p style="margin: 10px 0 5px; font-weight: bold; font-size: 15px; color: #191919;">Piloter</p>
-                                    <p style="margin: 0; font-size: 13px; color: #191919; line-height: 18px;">Suivez, mesurez et consolidez votre empreinte afin d'avoir une longueur d'avance.</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- BANNIERE VERTE CTA -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#50852b" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #50852b;">
-                <tr>
-                    <td align="center" style="padding: 15px 10px; text-align: center;">
-                        <p style="margin: 0; font-size: 16px; color: #ffffff; font-weight: bold;">Ne laissez pas la conversation se faire sans vous !</p>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- BOUTON CTA -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#F7F7F8" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #f7f7f8;">
-                <tr>
-                    <td align="center" style="padding: 40px 10px;">
-                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                                <td align="center" bgcolor="#50852b" style="border-radius: 5px; padding: 12px 30px;">
-                                    <a href="https://www.prismamedia.com/prismamediasolutions/actualites/prisma-media-solutions-innove-avec-content-for-llm-loffre-qui-optimise-et-mesure-votre-visibilite-dans-les-reponses-ia/" target="_blank" style="color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; display: inline-block;">Je découvre l'offre</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- FOOTER QUESTION -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#000000" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #000000;">
-                <tr>
-                    <td align="center" style="padding: 30px 10px; text-align: center; color: #ffffff;">
-                        <p style="margin: 0 0 5px 0; font-size: 14px;">Vous avez des questions ?</p>
-                        <a href="mailto:antoinelesieux@gmail.com" style="color: #ffffff; text-decoration: underline; font-size: 14px;">antoinelesieux@gmail.com</a>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- FOOTER LOGO -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" role="presentation" style="max-width: 600px; width: 600px;">
-                <tr>
-                    <td align="center" style="padding: 20px 10px;">
-                        <a href="https://www.prismamedia.com/prismamediasolutions/actualites/prisma-media-solutions-innove-avec-content-for-llm-loffre-qui-optimise-et-mesure-votre-visibilite-dans-les-reponses-ia/" target="_blank">
-                            <img src="https://www.prismamedia.com/app/uploads/2024/01/logo-prisma-media-solutions-emailing.png" width="120" alt="Logo Prisma Media Solutions" style="display: block; width: 120px; max-width: 120px; height: auto; border: 0;">
-                        </a>
-                    </td>
-                </tr>
-            </table>
-
-        </td>
-    </tr>
-</table>
-
-</body>
-</html></script>
-<script type="text/plain" id="email-html-4"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="fr">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>40 ans de télévision. Votre marque au cœur d'une soirée exceptionnelle.</title>
-    <!--[if gte mso 9]>
-    <xml>
-      <o:OfficeDocumentSettings>
-        <o:AllowPNG/>
-        <o:PixelsPerInch>96</o:PixelsPerInch>
-      </o:OfficeDocumentSettings>
-    </xml>
-    <![endif]-->
-    <style type="text/css">
-        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important; }
-        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #EEEFF1; }
-        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; -ms-interpolation-mode: bicubic; }
-        
-        /* Adaptaions Mobile */
-        @media screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 100% !important;
-            }
-            .fluid-img {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-            }
-            .pad-mobile {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-            .offre-col {
-                display: block !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                box-sizing: border-box;
-                border-right: none !important;
-                border-bottom: 1px solid rgba(255,255,255,0.15) !important;
-                padding: 20px 10px !important;
-            }
-            .offre-col-last {
-                display: block !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                box-sizing: border-box;
-                padding: 20px 10px !important;
-            }
-            .pastille-cell {
-                display: inline-block !important;
-                padding: 4px 2px !important;
-            }
-        }
-    </style>
-</head>
-<body style="margin: 0; padding: 0; background-color: #EEEFF1; font-family: Verdana, Geneva, sans-serif;">
-
-<!-- Preheader cach&eacute; -->
-<div style="display: none; max-height: 0px; overflow: hidden; font-size: 1px; line-height: 1px; color: #EEEFF1;">
-    Le 29 septembre, Télé-Loisirs, 1ère marque média entertainment, célèbre ses 40 ans avec une cérémonie exceptionnelle...
-</div>
-
-<!-- CONTENEUR GLOBAL -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#EEEFF1" role="presentation">
-    <tr>
-        <td align="center">
-            
-            <!-- LOGO HEADER -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" role="presentation" style="max-width: 600px; width: 600px;">
-                <tr>
-                    <td align="center" style="padding: 12px 10px 24px;">
-                        <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank">
-                            <img src="https://www.prismamedia.com/app/uploads/2024/01/logo-prisma-media-solutions-emailing.png" width="180" alt="Logo Prisma Media Solutions" style="display: block; width: 180px; max-width: 180px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- BANNIÈRE PRINCIPALE -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
-                <tr>
-                    <td align="center" valign="top">
-                        <img src="https://www.prismamedia.com//app/uploads/2026/07/header-tv.jpg" width="600" class="fluid-img" alt="40 ans de Télé-Loisirs" style="display: block; width: 100%; max-width: 600px; height: auto;">
-                    </td>
-                </tr>
-            </table>
-
-            <!-- SECTION INTROD / ÉVÉNEMENT -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
-                <tr>
-                    <td align="center" valign="top" class="pad-mobile" style="padding: 40px 50px 36px;">
-                        <img src="https://www.prismamedia.com//app/uploads/2026/07/logo-tele-loisirs.png" width="180" alt="Télé-Loisirs" style="display: block; width: 180px; max-width: 180px; margin: 0 auto 20px;">
-                        
-                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto 24px;" role="presentation">
-                            <tr>
-                                <td bgcolor="#E8192C" style="background: #e8192c; padding: 6px 16px; font-size: 14px; font-weight: bold; color: #ffffff; letter-spacing: 1.5px; text-transform: uppercase; text-align: center;">
-                                    Événement exceptionnel
-                                </td>
-                            </tr>
-                        </table>
-
-                        <p style="margin: 0; font-size: 15px; color: #1A1A1A; line-height: 1.7; text-align: center;">
-                            Le 29 septembre, <strong>Télé-Loisirs</strong>, 1ère marque média entertainment, célèbre ses 40 ans avec une cérémonie exceptionnelle qui récompense le meilleur des 4 dernières décennies du petit écran.
-                        </p>
-
-                        <table border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 26px auto 0;" role="presentation">
-                            <tr>
-                                <td align="center" style="border: 1px solid #0a0a0a; padding: 12px 30px;">
-                                    <span style="color: #0a0a0a; font-weight: bold; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;">Découvrir le dispositif</span>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- BANDEAU ROUGE TITRE -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#E8192C" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #e8192c;">
-                <tr>
-                    <td align="center" valign="top" style="padding: 22px 20px;">
-                        <p style="margin: 0; font-size: 16px; font-weight: bold; color: #FFFFFF; text-transform: uppercase; letter-spacing: 2px; text-align: center;">
-                            Un rendez-vous festif et fédérateur
-                        </p>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- LISTE DES INFORMATIONS (DATE, DIFFUSION, etc.) -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
-                
-                <!-- Date & Lieu -->
-                <tr>
-                    <td align="left" valign="middle" class="pad-mobile" style="padding: 18px 30px; border-bottom: 1px solid rgba(0,0,0,0.08);">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
-                            <tr>
-                                <td valign="middle" width="36" style="padding-right: 12px; font-size: 20px; line-height: 1;">📅</td>
-                                <td valign="middle">
-                                    <p style="margin: 0; font-size: 11px; color: #e8192c; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Date &amp; Lieu</p>
-                                    <p style="margin: 3px 0 0; font-size: 13px; color: #1a1a1a; font-weight: bold; line-height: 1.4;">29 septembre 2026 — Casino de Paris</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <!-- Diffusion -->
-                <tr>
-                    <td align="left" valign="middle" class="pad-mobile" style="padding: 18px 30px; border-bottom: 1px solid rgba(0,0,0,0.08);">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
-                            <tr>
-                                <td valign="middle" width="36" style="padding-right: 12px; font-size: 20px; line-height: 1;">📺</td>
-                                <td valign="middle">
-                                    <p style="margin: 0; font-size: 11px; color: #e8192c; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Diffusion</p>
-                                    <p style="margin: 3px 0 0; font-size: 13px; color: #1a1a1a; font-weight: bold; line-height: 1.4;">En direct en prime time en simultané sur CSTAR &amp; sur le site Télé-Loisirs</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <!-- Palmarès -->
-                <tr>
-                    <td align="left" valign="middle" class="pad-mobile" style="padding: 18px 30px; border-bottom: 1px solid rgba(0,0,0,0.08);">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
-                            <tr>
-                                <td valign="middle" width="36" style="padding-right: 12px; font-size: 20px; line-height: 1;">🏆</td>
-                                <td valign="middle">
-                                    <p style="margin: 0; font-size: 11px; color: #e8192c; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Palmarès</p>
-                                    <p style="margin: 3px 0 0; font-size: 13px; color: #1a1a1a; font-weight: bold; line-height: 1.4;">12 lauréats désignés par les Français</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <!-- Souvenirs -->
-                <tr>
-                    <td align="left" valign="middle" class="pad-mobile" style="padding: 18px 30px 22px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation">
-                            <tr>
-                                <td valign="middle" width="36" style="padding-right: 12px; font-size: 20px; line-height: 1;">🎬</td>
-                                <td valign="middle">
-                                    <p style="margin: 0; font-size: 11px; color: #e8192c; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px;">Souvenirs TV</p>
-                                    <p style="margin: 3px 0 0; font-size: 13px; color: #1a1a1a; font-weight: bold; line-height: 1.4;">Retour sur des moments de TV cultes</p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- BLOC NOIR CONTEXTE & PASTILLES -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#0A0A0A" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #0a0a0a;">
-                <tr>
-                    <td align="center" valign="top" class="pad-mobile" style="padding: 40px 40px 0;">
-                        <p style="margin: 0; font-size: 22px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-align: center; line-height: 1.3;">FAITES BRILLER VOTRE MARQUE</p>
-                        <p style="margin: 10px 0 0; font-size: 12px; font-weight: bold; color: #e8192c; letter-spacing: 2px; text-transform: uppercase; text-align: center;">— Au cœur de cet événement —</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" valign="top" class="pad-mobile" style="padding: 28px 20px 0;">
-                        <table border="0" cellpadding="0" cellspacing="0" align="center" role="presentation">
-                            <tr>
-                                <td align="center" style="text-align: center;">
-                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
-                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">TV</span>
-                                    </span>
-                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
-                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Digital</span>
-                                    </span>
-                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
-                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Print</span>
-                                    </span>
-                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
-                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Social</span>
-                                    </span>
-                                    <span class="pastille-cell" style="display: inline-block; padding: 4px;">
-                                        <span style="background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); padding: 8px 14px; font-size: 11px; font-weight: bold; color: #ffffff; letter-spacing: 1px; text-transform: uppercase; display: inline-block;">Event</span>
-                                    </span>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" valign="top" class="pad-mobile" style="padding: 26px 40px 40px;">
-                        <p style="margin: 0; font-size: 14px; color: #ffffff; line-height: 1.7; text-align: center;">
-                            Une visibilité avant, pendant et après la cérémonie<br>au sein de l'écosystème Télé-Loisirs
-                        </p>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- OFFRE & TARIF (GRILLE RESPO 3 COLONNES) -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #ffffff;">
-                <tr>
-                    <td align="center" valign="top" style="padding: 34px 20px 10px;">
-                        <table border="0" cellpadding="0" cellspacing="0" align="center" role="presentation">
-                            <tr>
-                                <td bgcolor="#E8192C" style="background: #e8192c; padding: 6px 16px; font-size: 14px; font-weight: bold; color: #ffffff; letter-spacing: 1.5px; text-transform: uppercase; text-align: center;">
-                                    Une opportunité unique
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                
-                <!-- BLOC OFFRE INTERNE -->
-                <tr>
-                    <td align="center" valign="top" class="pad-mobile" style="padding: 20px 30px 10px;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#0A0A0A" style="background-color: #0a0a0a;" role="presentation">
-                            <tr>
-                                <!-- Colonne 1 -->
-                                <td align="center" valign="middle" width="33.33%" class="offre-col" style="padding: 25px 10px; border-right: 1px solid rgba(255,255,255,0.15);">
-                                    <p style="margin: 0; font-size: 14px; font-weight: bold; color: #ffffff; line-height: 1.4; text-transform: uppercase; letter-spacing: 1px; text-align: center;">Partenariat<br>exclusif</p>
-                                </td>
-                                <!-- Colonne 2 -->
-                                <td align="center" valign="middle" width="33.33%" class="offre-col" style="padding: 25px 10px; border-right: 1px solid rgba(255,255,255,0.15);">
-                                    <p style="margin: 0 0 6px 0; font-size: 11px; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; text-align: center; font-weight: bold;">Contacts</p>
-                                    <p style="margin: 0; font-size: 32px; font-weight: bold; color: #e8192c; line-height: 1.1; text-align: center;">17M</p>
-                                </td>
-                                <!-- Colonne 3 -->
-                                <td align="center" valign="middle" width="33.33%" class="offre-col-last" style="padding: 25px 10px;">
-                                    <p style="margin: 0 0 6px 0; font-size: 11px; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; text-align: center; font-weight: bold;">Budget</p>
-                                    <p style="margin: 0; font-size: 32px; font-weight: bold; color: #e8192c; line-height: 1.1; text-align: center;">45K€ <span style="font-size: 13px; color: #ffffff; font-weight: bold; text-transform: lowercase;">net</span></p>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-
-                <!-- CTA BOUTON -->
-                <tr>
-                    <td align="center" valign="middle" style="padding: 25px 10px 40px;">
-                        <table border="0" cellpadding="0" cellspacing="0" role="presentation">
-                            <tr>
-                                <td align="center" bgcolor="#0A0A0A" style="background-color: #0a0a0a; padding: 15px 40px;">
-                                    <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank" style="color: #ffffff; text-decoration: none; font-weight: bold; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; display: inline-block;">Je découvre l'offre</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- FOOTER NOIR CONTACT -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#0A0A0A" class="email-container" role="presentation" style="max-width: 600px; width: 600px; background-color: #0a0a0a;">
-                <tr>
-                    <td align="center" valign="top" style="padding: 35px 20px;">
-                        <p style="margin: 0 0 16px 0; font-size: 13px; color: #ffffff; text-align: center; line-height: 22px;">
-                            Contacts : <a href="mailto:antoinelesieux@gmail.com" style="color: #ffffff; text-decoration: underline; font-weight: bold;">Antoine Lesieux</a>
-                        </p>
-                        <p style="margin: 0; font-size: 11px; color: #888888; line-height: 18px; text-align: center;">
-                            Si vous ne souhaitez plus recevoir nos emails, cliquez ici.
-                        </p>
-                    </td>
-                </tr>
-            </table>
-
-            <!-- LOGO FOOTER -->
-            <table border="0" cellpadding="0" cellspacing="0" width="600" class="email-container" role="presentation" style="max-width: 600px; width: 600px;">
-                <tr>
-                    <td align="center" style="padding: 20px 10px;">
-                        <a href="https://www.prismamedia.com/prismamediasolutions/" target="_blank">
-                            <img src="https://www.prismamedia.com/app/uploads/2024/01/logo-prisma-media-solutions-emailing.png" width="120" alt="Logo Prisma Media Solutions" style="display: block; width: 120px; max-width: 120px; height: auto;">
-                        </a>
-                    </td>
-                </tr>
-            </table>
-
-        </td>
-    </tr>
-</table>
-
-</body>
-</html></script>
-<script type="text/plain" id="email-html-5"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="fr" xml:lang="fr">
-<head>
-<!--[if mso]>
-<xml>
-<o:OfficeDocumentSettings>
-<o:AllowPNG/>
-<o:PixelsPerInch>96</o:PixelsPerInch>
-</o:OfficeDocumentSettings>
-</xml>
-<![endif]-->
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Harper's Bazaar Homme, en kiosque le 30 octobre 2025</title>
-<style type="text/css">
-body{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;color:#000000;margin:0 auto}
-td{line-height:100%}
-img{outline:0;text-decoration:none;-ms-interpolation-mode:bicubic;border:0;display:block}
-table{border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0}
-a{color:inherit;text-decoration:none;mso-line-height-rule:exactly}
-@media screen and (max-width:640px){
-  .m_w100p{width:100% !important}
-  .m_pr20px{padding-right:20px !important}
-  .m_pl20px{padding-left:20px !important}
-  .m_fz22px{font-size:22px !important}
-  .m_lh26px{line-height:26px !important}
-  .fluid-img{width:100% !important;height:auto !important;max-width:100% !important}
-  .m_pad24{padding-left:24px !important;padding-right:24px !important}
-  .m_pad16{padding-left:16px !important;padding-right:16px !important}
-  .m_fz28{font-size:22px !important;line-height:26px !important}
-  .m_stat-num{font-size:26px !important;line-height:28px !important}
-  .m_stat-label{font-size:9px !important;letter-spacing:1px !important}
-  .m_logo{width:200px !important}
-}
-</style>
-</head>
-<body style="background-color:#fffbf8;margin:0;padding:0;">
-
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">
-Une nouvelle page s'ouvre. Harper's Bazaar Homme, en kiosque le 30 octobre 2025.
-&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;&#8203;&nbsp;
-</div>
-
-<center style="width:100%;background-color:#fffbf8;">
-<!--[if mso]>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="620" align="center"><tr><td>
-<![endif]-->
-<table role="presentation" width="620" cellpadding="0" cellspacing="0" border="0" align="center" class="m_w100p" style="width:620px;max-width:620px;background-color:#fffbf8;">
-
-  <!-- BANDEAU NOIR AVEC LOGO -->
-  <tr>
-    <td align="center" style="background-color:#000000;padding:34px 20px;">
-      <img src="https://www.prismamedia.com/app/uploads/2026/07/LOGO_HBZ_HOMME-1.png" width="280" alt="Harper's Bazaar Homme" class="m_logo" style="width:280px;max-width:280px;height:auto;margin:auto;filter:brightness(0) invert(1);-webkit-filter:brightness(0) invert(1);">
-    </td>
-  </tr>
-
-  <!-- TITRE -->
-  <tr>
-    <td align="center" class="m_pr20px m_pl20px m_fz28" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;text-align:center;font-size:26px;line-height:30px;padding:30px 10px 22px 10px;">
-      UNE NOUVELLE PAGE S'OUVRE
-    </td>
-  </tr>
-  <tr>
-    <td style="border-bottom:2px solid #000000;font-size:2px;line-height:2px;">&nbsp;</td>
-  </tr>
-
-  <!-- HEADER PLEINE LARGEUR -->
-  <tr>
-    <td>
-      <img src="https://www.prismamedia.com/app/uploads/2026/07/hbz-homme.jpg" width="620" alt="Harper's Bazaar Homme" class="fluid-img" style="width:620px;max-width:620px;height:auto;">
-    </td>
-  </tr>
-
-  <!-- LETTRE -->
-  <tr>
-    <td class="m_pad24" style="padding:32px 50px 0 50px;">
-      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
-        Chères Amies, Chers Amis,
-      </p>
-      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
-        Une nouvelle page s'ouvre.
-      </p>
-      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
-        Deux ans après le lancement de Harper's Bazaar France, la France devient le premier pays au monde à faire naître Harper's Bazaar Homme.
-      </p>
-      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
-        Un magazine iconique, visionnaire, ancré dans la culture mode, au Masculin Pluriel. Une nouvelle voix masculine, libre, singulière, esthétique, qui explore les obsessions contemporaines et redéfinit la masculinité d'aujourd'hui. La mode y devient un langage.
-      </p>
-      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
-        Au fil de 244 pages : des images fortes, des entretiens sans filtre (Jonathan Anderson, Willy Chavarria, Théodore Pellerin…), des idées qui bousculent, des regards qui inspirent.
-      </p>
-      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0 0 18px 0;text-align:left;">
-        Beauté, sport, culture et style s'y rencontrent avec des rubriques signatures : l'irrésistible Bazaar Memo, l'incontournable Bazaar Opinion, et le subjectif Why Don't You…
-      </p>
-      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-style:italic;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0;text-align:left;">
-        Le tout avec audace et élégance.
-      </p>
-    </td>
-  </tr>
-
-  <!-- BLOC CHIFFRES CLES -->
-  <tr>
-    <td style="padding:34px 40px 0 40px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr><td style="border-top:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td></tr>
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td class="m_pad16" style="padding:28px 40px 28px 40px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td align="center" width="33.33%" style="padding:0 6px;">
-            <p class="m_stat-num" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;font-size:34px;line-height:36px;margin:0;">244</p>
-            <p class="m_stat-label" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0 0;">Pages</p>
-          </td>
-          <td width="1" style="border-left:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td>
-          <td align="center" width="33.33%" style="padding:0 6px;">
-            <p class="m_stat-num" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;font-size:34px;line-height:36px;margin:0;">3</p>
-            <p class="m_stat-label" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0 0;">Rubriques signatures</p>
-          </td>
-          <td width="1" style="border-left:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td>
-          <td align="center" width="33.34%" style="padding:0 6px;">
-            <p class="m_stat-num" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#000000;font-size:34px;line-height:36px;margin:0;">30 oct.</p>
-            <p class="m_stat-label" style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin:8px 0 0 0;">En kiosque</p>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding:0 40px 0 40px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr><td style="border-top:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td></tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- CTA (encadre noir, sans lien) -->
-  <tr>
-    <td align="center" class="m_pad16" style="padding:44px 20px 34px 20px;">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
-        <tr>
-          <td style="background-color:#000000;border-top:2px solid #000000;border-bottom:2px solid #000000;border-left:2px solid #000000;border-right:2px solid #000000;color:#ffffff;font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;font-size:18px;text-align:center;padding:12px 40px;">
-            EN KIOSQUE LE 30 OCTOBRE 2025
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- TEXTE DE CLOTURE -->
-  <tr>
-    <td align="center" class="m_pad24" style="padding:0 50px 40px 50px;">
-      <p style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:400;color:#000000;font-size:15px;line-height:22px;margin:0;">
-        Une aventure éditoriale née en France, pensée pour rayonner dans le monde.<br>
-        Bienvenue dans l'univers de Harper's Bazaar Homme.
-      </p>
-    </td>
-  </tr>
-
-  <!-- LIGNE DE SEPARATION FOOTER -->
-  <tr>
-    <td style="padding:0 20px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr><td style="border-top:1px solid #000000;font-size:1px;line-height:1px;">&nbsp;</td></tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- FOOTER : LOGO PRISMA MEDIA SOLUTIONS + CTA CONTACT -->
-  <tr>
-    <td style="padding:30px 20px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td align="left" valign="middle" width="50%">
-            <img src="https://www.prismamedia.com/app/uploads/2026/07/logo-prisma-media.png" width="150" alt="Prisma Media Solutions" style="width:150px;max-width:150px;height:auto;">
-          </td>
-          <td align="right" valign="middle" width="50%">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="right">
-              <tr>
-                <td style="font-family:Georgia,Times,'Times New Roman',serif;font-weight:700;color:#ffffff;text-align:center;text-transform:uppercase;font-size:12px;background-color:#000000;line-height:20px;padding:8px 18px;">
-                  <a href="mailto:antoinelesieux@gmail.com" style="color:#ffffff;text-decoration:none;">CONTACTEZ-NOUS</a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
-  <!-- MENTIONS LEGALES -->
-  <tr>
-    <td align="center" class="m_pad24" style="padding:10px 40px 36px 40px;">
-      <p style="font-family:Helvetica,Arial,sans-serif;color:#000000;font-size:10px;line-height:15px;margin:0;">
-        Harper's Bazaar Homme 2026 © Tous droits réservés.
-      </p>
-    </td>
-  </tr>
-
-</table>
-<!--[if mso]>
-</td></tr></table>
-<![endif]-->
-</center>
-
-</body>
-</html>
-</script>
-
-<script>
-(function(){
+  // --- GESTION CHARGEMENT DYNAMIQUE DES EMAILS (FETCH) ---
   var previews = document.querySelectorAll('.email-preview');
   
   previews.forEach(function(wrapper){
     var id = wrapper.getAttribute('data-email-id');
-    var tpl = document.getElementById('email-html-' + id);
-    if(!tpl) return;
-    var html = tpl.textContent;
+    var emailUrl = wrapper.getAttribute('data-email-url');
     var iframe = wrapper.querySelector('iframe');
+    var openBtn = document.querySelector('[data-email-open="' + id + '"]');
+    
+    if(!emailUrl) return;
 
     var DESKTOP_WIDTH = 700;
     iframe.style.width = DESKTOP_WIDTH + 'px';
@@ -2872,28 +1549,36 @@ Une nouvelle page s'ouvre. Harper's Bazaar Homme, en kiosque le 30 octobre 2025.
       } catch(e){}
     }
 
-    iframe.addEventListener('load', function(){
-      applyScale();
-      
-      if('ResizeObserver' in window){
-        var ro = new ResizeObserver(function(){ applyScale(); });
-        ro.observe(wrapper);
-      } else {
-        window.addEventListener('resize', applyScale);
-      }
-    });
-    
-    iframe.srcdoc = html;
+    fetch(emailUrl)
+      .then(function(response){
+        if(!response.ok) throw new Error('Erreur de chargement');
+        return response.text();
+      })
+      .then(function(html){
+        iframe.srcdoc = html;
 
-    var openBtn = document.querySelector('[data-email-open="' + id + '"]');
-    if(openBtn){
-      openBtn.addEventListener('click', function(){
-        var blob = new Blob([html], { type: 'text/html' });
-        var url = URL.createObjectURL(blob);
-        window.open(url, '_blank', 'noopener');
-        setTimeout(function(){ URL.revokeObjectURL(url); }, 5000);
+        iframe.addEventListener('load', function(){
+          applyScale();
+          if('ResizeObserver' in window){
+            var ro = new ResizeObserver(function(){ applyScale(); });
+            ro.observe(wrapper);
+          } else {
+            window.addEventListener('resize', applyScale);
+          }
+        });
+
+        if(openBtn){
+          openBtn.addEventListener('click', function(){
+            var blob = new Blob([html], { type: 'text/html' });
+            var blobUrl = URL.createObjectURL(blob);
+            window.open(blobUrl, '_blank', 'noopener');
+            setTimeout(function(){ URL.revokeObjectURL(blobUrl); }, 5000);
+          });
+        }
+      })
+      .catch(function(err){
+        console.error('Erreur lors du chargement de l\'emailing ' + id + ' :', err);
       });
-    }
   });
 })();
 </script>
