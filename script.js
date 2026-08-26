@@ -70,9 +70,14 @@
     if(lastFocused){ lastFocused.focus(); }
   }
 
+  // Correction de l'ordre de tabulation : Précédent -> Suivant -> Fermer
   function getFocusableEls(){
-    var els = [closeBtn];
-    if(thumbs.length > 1){ els.unshift(nextBtn); els.unshift(prevBtn); }
+    var els = [];
+    if(thumbs.length > 1){
+      els.push(prevBtn);
+      els.push(nextBtn);
+    }
+    els.push(closeBtn);
     return els;
   }
 
